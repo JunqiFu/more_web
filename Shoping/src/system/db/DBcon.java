@@ -6,8 +6,6 @@ import java.sql.*;
 public class DBcon {
 	
 	private Connection con;
-	
-
 	public Connection getConnection(){		
 		try{
 			//Class.forName("com.mysql.jdbc.Driver");
@@ -22,9 +20,6 @@ public class DBcon {
 		}	
 		return con;
 	}
-	
-	
-	
 	
 	public static void main(String[] args) {
 		DBcon db=new DBcon();
