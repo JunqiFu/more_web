@@ -1,3 +1,9 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	
-    <title>Mobile Shop</title>
+    <title>MARS</title>
 	
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css">
@@ -35,7 +41,7 @@
 </head>
 
 <body>
-	<!--Top-->
+		<!--Top-->
 	<nav id="top">
 		<div class="container">
 			<div class="row">
@@ -64,7 +70,7 @@
 		<header class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<div id="logo"><img src="images/logo (1).png" /></div>
+				<div id="logo"><img src="images/logo(1).png" /></div>
 			</div>
 			<div class="col-md-4">
 				<form class="form-search">  
@@ -85,101 +91,118 @@
 			</div>
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="index.html"> 首 页</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">商 城</a>
+					<li><a href="index.html">主页</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">平板电脑</a>
 						<div class="dropdown-menu">
 							<div class="dropdown-inner">
 								<ul class="list-unstyled">
-									<li><a href="category.html">线上商城</a></li>
-									<li><a href="#">实体店</a></li>
+									<li><a href="category.html">微软电脑</a></li>
+									<li><a href="category.html">电子书</a></li>
 								</ul>
 							</div>
 						</div>
 					</li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> 体 验 </a>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">笔记本电脑</a>
 						<div class="dropdown-menu">
 							<div class="dropdown-inner">
 								<ul class="list-unstyled">
-									<li><a href="category.html">苹果</a></li>
-									<li><a href="category.html">华为</a></li>
+									<li><a href="category.html">戴尔</a></li>
+									<li><a href="category.html">华硕</a></li>
 									<li><a href="category.html">三星</a></li>
-									<li><a href="category.html">魅族</a></li>
-									<li><a href="category.html">诺基亚</a></li>
+									<li><a href="category.html">联想</a></li>
+									<li><a href="category.html">宏基</a></li>
 								</ul>
 							</div> 
 						</div>
 					</li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> 产 品</a>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">手机和平和平板电脑</a>
 						<div class="dropdown-menu" style="margin-left: -203.625px;">
 							<div class="dropdown-inner">
 								<ul class="list-unstyled">
-									<li><a href="account_find.html">苹果</a></li>
-									<li><a href="account_find.html">三星</a></li>
-									<li><a href="account_find.html">诺基亚</a></li>
-									<li><a href="account_find.html">联想</a></li>
-									<li><a href="account_find.html">谷歌</a></li>
+									<li><a href="category.html">苹果</a></li>
+									<li><a href="category.html">三星</a></li>
+									<li><a href="category.html">诺基亚</a></li>
+									<li><a href="category.html">联想</a></li>
+									<li><a href="category.html">谷歌</a></li>
 								</ul>
 								<ul class="list-unstyled">
-									<li><a href="account_find.html">Nexus</a></li>
-									<li><a href="account_find.html">Dell</a></li>
-									<li><a href="account_find.html">Oppo</a></li>
-									<li><a href="account_find.html">黑莓</a></li>
-									<li><a href="account_find.html">HTC</a></li>
+									<li><a href="category.html">Nexus</a></li>
+									<li><a href="category.html">Dell</a></li>
+									<li><a href="category.html">Oppo</a></li>
+									<li><a href="category.html">黑莓</a></li>
+									<li><a href="category.html">HTC</a></li>
 								</ul>
 								<ul class="list-unstyled">
-									<li><a href="account_find.html">LG</a></li>
-									<li><a href="account_find.html">Q-Mobiles</a></li>
-									<li><a href="account_find.html">索尼</a></li>
-									<li><a href="account_find.html">永光</a></li>
-									<li><a href="account_find.html">爱立信</a></li>
+									<li><a href="category.html">LG</a></li>
+									<li><a href="category.html">Q-Mobiles</a></li>
+									<li><a href="category.html">索尼</a></li>
+									<li><a href="category.html">永光</a></li>
+									<li><a href="category.html">爱立信</a></li>
 								</ul>
 							</div>
 						</div>
 					</li>
-					<li><a href="contact.html">服 务</a></li>
+					<li><a href="category.html">系统软件</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 	<!--//////////////////////////////////////////////////-->
-	<!--///////////////////Contact Page///////////////////-->
+	<!--///////////////////Account Page///////////////////-->
 	<!--//////////////////////////////////////////////////-->
 	<div id="page-content" class="single-page">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<ul class="breadcrumb">
-						<li><a href="index.html">首 页</a></li>
-						<li><a href="contact.html">服 务</a></li>
+						<li><a href="index.html">主页</a></li>
+						<li><a href="account.html">个人账户</a></li>
 					</ul>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-12">
-					<div class="heading"><h1>联系我们</h1></div>
-				</div>
-				<div class="col-md-6" style="margin-bottom: 30px;">
-					<form name="form1" id="ff" method="post" action="contact.php">
+				<div class="col-md-6">
+					<div class="heading"><h2>登陆</h2></div>
+					<form name="form1" id="ff1" method="post" action="login_deal.jsp">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="姓名*" name="name" id="name" required data-validation-required-message="Please enter your name.">
+							<input type="text" class="form-control" placeholder="用户名 :" name="username" id="username" required>
 						</div>
 						<div class="form-group">
-							<input type="email" class="form-control" placeholder="邮箱 *" name="email" id="email" required data-validation-required-message="Please enter your email address.">
+							<input type="password" class="form-control" placeholder="密码 :" name="password" id="password" required>
 						</div>
-						<div class="form-group">
-							<input type="tel" class="form-control" placeholder="联系电话 *" name="phone" id="phone" required data-validation-required-message="Please enter your phone number.">
-						</div>
-						<div class="form-group">
-							<textarea class="form-control" placeholder="你想要说些什么...*" name="message" id="message" required data-validation-required-message="Please enter a message."></textarea>
-						</div>
-						<button type="submit" class="btn btn-1">发送信息</button>
+						<button type="submit" class="btn btn-1" name="login" id="login">登陆</button>
+						<a href="#">是否忘记密码？</a>
 					</form>
 				</div>
 				<div class="col-md-6">
-					<p><span class="glyphicon glyphicon-home"></span> 中国 成都 高新</p>
-					<p><span class="glyphicon glyphicon-earphone"></span> +86 456587941 ,+86 456234794</p>
-					<p><span class="glyphicon glyphicon-envelope"></span> Marsshop@sian.com</p>
-					<!--<iframe src="#" width="95%" height="230" frameborder="0" style="border:0"></iframe>-->
+					<div class="heading"><h2>新用户？请创建一个账户。</h2></div>
+					<form name="form2" id="ff2" method="post" action="register.php">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="First Name :" name="firstname" id="firstname" required>
+						</div>
+						<div class="form-group">
+							<input type="email" class="form-control" placeholder="Last Name :" name="lastname" id="lastname" required>
+						</div>
+						<div class="form-group">
+							<input type="tel" class="form-control" placeholder="Email Address :" name="email" id="email" required>
+						</div>
+						<div class="form-group">
+							<input type="tel" class="form-control" placeholder="Mobile :" name="phone" id="phone" required>
+						</div>
+						<div class="form-group">
+							<input name="gender" id="gender" type="radio"> 男 <input name="gender" id="gender" type="radio"> 女
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control" placeholder="Password :" name="password" id="password" required>
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control" placeholder="Retype Password :" name="repassword" id="repassword" required>
+						</div>
+						<div class="form-group">
+							<input name="agree" id="agree" type="checkbox" > 我遵守网站的账户保护协议。
+						</div>
+						<button type="submit" class="btn btn-1">创建</button>
+					</form>
 				</div>
 			</div>
 		</div>
