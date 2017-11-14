@@ -163,7 +163,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="row">
 				<div class="col-md-6">
 					<div class="heading"><h2>登陆</h2></div>
-					<form name="form1" id="ff1" method="post" action="login_deal.jsp">
+					<form name="form1" id="ff1" method="post" action="account_deal.jsp">
 						<div class="form-group">
 							<input type="text" class="form-control" placeholder="用户名 :" name="username" id="username" required>
 						</div>
@@ -171,32 +171,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<input type="password" class="form-control" placeholder="密码 :" name="password" id="password" required>
 						</div>
 						<button type="submit" class="btn btn-1" name="login" id="login">登陆</button>
-						<a href="#">是否忘记密码？</a>
+						<a href="#">是否忘记密码?</a>
+					    
+						<br><br>
+						<font style="font-size: 30px;color:red;">	
+						<%if(session.getAttribute("error")!=null){
+						out.print( session.getAttribute("error")); 
+   								session.setAttribute("error","");
+   								}%></font>
 					</form>
 				</div>
 				<div class="col-md-6">
 					<div class="heading"><h2>新用户？请创建一个账户。</h2></div>
 					<form name="form2" id="ff2" method="post" action="register.php">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="First Name :" name="firstname" id="firstname" required>
+							<input type="text" class="form-control" placeholder="用户名 :" name="firstname" id="firstname" required>
 						</div>
 						<div class="form-group">
-							<input type="email" class="form-control" placeholder="Last Name :" name="lastname" id="lastname" required>
+							<input type="email" class="form-control" placeholder="姓名 :" name="lastname" id="lastname" required>
 						</div>
 						<div class="form-group">
-							<input type="tel" class="form-control" placeholder="Email Address :" name="email" id="email" required>
+							<input type="tel" class="form-control" placeholder="邮件地址 :" name="email" id="email" required>
 						</div>
 						<div class="form-group">
-							<input type="tel" class="form-control" placeholder="Mobile :" name="phone" id="phone" required>
+							<input type="tel" class="form-control" placeholder="手机 :" name="phone" id="phone" required>
 						</div>
 						<div class="form-group">
 							<input name="gender" id="gender" type="radio"> 男 <input name="gender" id="gender" type="radio"> 女
 						</div>
 						<div class="form-group">
-							<input type="password" class="form-control" placeholder="Password :" name="password" id="password" required>
+							<input type="password" class="form-control" placeholder="密码 :" name="password" id="password" required>
 						</div>
 						<div class="form-group">
-							<input type="password" class="form-control" placeholder="Retype Password :" name="repassword" id="repassword" required>
+							<input type="password" class="form-control" placeholder="重新输入密码 :" name="repassword" id="repassword" required>
 						</div>
 						<div class="form-group">
 							<input name="agree" id="agree" type="checkbox" > 我遵守网站的账户保护协议。
