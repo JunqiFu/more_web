@@ -14,7 +14,7 @@ public class DBcon {
 			Class.forName("com.mysql.jdbc.Driver");
 			String url = "jdbc:mysql://localhost:3306/shopping?"
 					+ "useUnicode=true&characterEncoding=UTF8";
-			con = DriverManager.getConnection(url, "root", "root");
+			con = DriverManager.getConnection(url, "root", "123456");
 		}catch(Exception e){
 			e.printStackTrace();
 		}	
