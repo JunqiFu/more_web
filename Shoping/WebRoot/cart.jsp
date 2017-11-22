@@ -13,7 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta name="description" content="">
     <meta name="author" content="">
 	
-    <title>MARS</title>
+    <title>Mobile Shop</title>
 	
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css">
@@ -39,7 +39,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <script src="js/respond.min.js"></script>
     <![endif]-->
 </head>
-
 <body>
 		<!--Top-->
 	<nav id="top">
@@ -70,7 +69,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<header class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<div id="logo"><img src="images/logo(1).png" /></div>
+				<div id="logo"><img src="images/logo (1).png" /></div>
 			</div>
 			<div class="col-md-4">
 				<form class="form-search">  
@@ -91,133 +90,158 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="index.html">主页</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">平板电脑</a>
+					<li><a href="index.html"> 首 页</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">商 城</a>
 						<div class="dropdown-menu">
 							<div class="dropdown-inner">
 								<ul class="list-unstyled">
-									<li><a href="category.html">微软电脑</a></li>
-									<li><a href="category.html">电子书</a></li>
+									<li><a href="category.html">线上商城</a></li>
+									<li><a href="#">实体店</a></li>
 								</ul>
 							</div>
 						</div>
 					</li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">笔记本电脑</a>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> 体 验 </a>
 						<div class="dropdown-menu">
 							<div class="dropdown-inner">
 								<ul class="list-unstyled">
-									<li><a href="category.html">戴尔</a></li>
-									<li><a href="category.html">华硕</a></li>
+									<li><a href="category.html">苹果</a></li>
+									<li><a href="category.html">华为</a></li>
 									<li><a href="category.html">三星</a></li>
-									<li><a href="category.html">联想</a></li>
-									<li><a href="category.html">宏基</a></li>
+									<li><a href="category.html">魅族</a></li>
+									<li><a href="category.html">诺基亚</a></li>
 								</ul>
 							</div> 
 						</div>
 					</li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">手机和平和平板电脑</a>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> 产 品</a>
 						<div class="dropdown-menu" style="margin-left: -203.625px;">
 							<div class="dropdown-inner">
 								<ul class="list-unstyled">
-									<li><a href="category.html">苹果</a></li>
-									<li><a href="category.html">三星</a></li>
-									<li><a href="category.html">诺基亚</a></li>
-									<li><a href="category.html">联想</a></li>
-									<li><a href="category.html">谷歌</a></li>
+									<li><a href="account_find.html">苹果</a></li>
+									<li><a href="account_find.html">三星</a></li>
+									<li><a href="account_find.html">诺基亚</a></li>
+									<li><a href="account_find.html">联想</a></li>
+									<li><a href="account_find.html">谷歌</a></li>
 								</ul>
 								<ul class="list-unstyled">
-									<li><a href="category.html">Nexus</a></li>
-									<li><a href="category.html">Dell</a></li>
-									<li><a href="category.html">Oppo</a></li>
-									<li><a href="category.html">黑莓</a></li>
-									<li><a href="category.html">HTC</a></li>
+									<li><a href="account_find.html">Nexus</a></li>
+									<li><a href="account_find.html">Dell</a></li>
+									<li><a href="account_find.html">Oppo</a></li>
+									<li><a href="account_find.html">黑莓</a></li>
+									<li><a href="account_find.html">HTC</a></li>
 								</ul>
 								<ul class="list-unstyled">
-									<li><a href="category.html">LG</a></li>
-									<li><a href="category.html">Q-Mobiles</a></li>
-									<li><a href="category.html">索尼</a></li>
-									<li><a href="category.html">永光</a></li>
-									<li><a href="category.html">爱立信</a></li>
+									<li><a href="account_find.html">LG</a></li>
+									<li><a href="account_find.html">Q-Mobiles</a></li>
+									<li><a href="account_find.html">索尼</a></li>
+									<li><a href="account_find.html">永光</a></li>
+									<li><a href="account_find.html">爱立信</a></li>
 								</ul>
 							</div>
 						</div>
 					</li>
-					<li><a href="category.html">系统软件</a></li>
+					<li><a href="contact.html">服 务</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 	<!--//////////////////////////////////////////////////-->
-	<!--///////////////////Account Page///////////////////-->
+	<!--///////////////////Cart Page//////////////////////-->
 	<!--//////////////////////////////////////////////////-->
 	<div id="page-content" class="single-page">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<ul class="breadcrumb">
-						<li><a href="index.html">主页</a></li>
-						<li><a href="account.html">个人账户</a></li>
+						<li><a href="index.html">首 页</a></li>
+						<li><a href="cart.html">购物车</a></li>
 					</ul>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-6">
-					<div class="heading"><h2>登陆</h2></div>
-					<form name="form1" id="ff1" method="post" action="account_deal.jsp">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="用户名 :" name="username" id="username" required>
+				<div class="product well">
+					<div class="col-md-3">
+						<div class="image">
+							<img src="images/Iphone X.jpg" />
 						</div>
-						<div class="form-group">
-							<input type="password" class="form-control" placeholder="密码 :" name="password" id="password" required>
+					</div>
+					<div class="col-md-9">
+						<div class="caption">
+							<div class="name"><h3><a href="product.html">iphone X</a></h3></div>
+							<div class="info">	
+								<ul>
+									<li>品牌: Apple</li>
+									<li>商品名称：iphone X</li>
+								</ul>
+							</div>
+							<div class="price">4999元<span>5388元</span></div>
+							<label>数量: </label> <input class="form-inline quantity" type="text" value="1"><a href="#" class="btn btn-2 ">购买</a>
+							<hr>
+							<a href="#" class="btn btn-default pull-right">删除商品信息</a>
 						</div>
-						<button type="submit" class="btn btn-1" name="login" id="login">登陆</button>
-						<a href="#">是否忘记密码?</a>
-					    
-						<br><br>
-						<font style="font-size: 30px;color:red;">	
-						<%if(session.getAttribute("error")!=null){
-						out.print( session.getAttribute("error")); 
-   								session.setAttribute("error","");
-   								}%></font>
-					</form>
+					</div>
+					<div class="clear"></div>
+				</div>	
+			</div>
+			<div class="row">
+				<div class="product well">
+					<div class="col-md-3">
+						<div class="image">
+							<img src="images/OPPO R11.jpg" />
+						</div>
+					</div>
+					<div class="col-md-9">
+						<div class="caption">
+							<div class="name"><h3><a href="product.html">OPPO R11</a></h3></div>
+							<div class="info">
+								<ul>
+									<li>品牌: OPPO</li>
+									<li>商品名称: OPPO R11</li>
+								</ul>
+							</div>
+							<div class="price">4899元<span>5321元</span></div>
+							<label>数量: </label> <input class="form-inline quantity" type="text" value="1"><a href="#" class="btn btn-2 ">购买</a>
+							<hr>
+							<a href="#" class="btn btn-default pull-right">删除商品信息</a>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>	
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-md-offset-8 ">
+					<center><a href="category.html" class="btn btn-1">继续购物</a></center>
 				</div>
-				<div class="col-md-6">
-					<div class="heading"><h2>新用户？请创建一个账户。</h2></div>
-					<form name="form2" id="ff2" method="post" action="register_deal.jsp">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="用户名 :" name="username" id="username" required>
-						</div>
-						<div class="form-group">
-							<input type="tel" class="form-control" placeholder="姓名:" name="name" id="name" required>
-						</div>
-						<div class="form-group">
-							<input type="tel" class="form-control" placeholder="手机 :" name="phone" id="phone" required>
-						</div>
-						<div class="form-group">
-							<input type="email" class="form-control" placeholder="邮箱地址:" name="email" id="email" required>
-						</div>
-						<div class="form-group">
-							<input name="sex" id="sex" type="radio"  value="m"> 男 <input name="sex" id="sex" type="radio"  value="f"> 女
-						</div>
-						<div class="form-group">
-							<input type="password" class="form-control" placeholder="密码 :" name="pwd" id="pwd" required>
-						</div>
-						<div class="form-group">
-							<input type="password" class="form-control" placeholder="重新输入密码 :" name="pwd1" id="pwd1" required>
-						</div>
-						<div class="form-group">
-							<input name="agree" id="agree" type="checkbox" > 我遵守网站的账户保护协议。
-						</div>
-						<button type="submit" class="btn btn-1">创建</button>
-					</form>
-						<font style="font-size: 30px;color:red;">	
-						<%if(session.getAttribute("error_pwd")!=null){
-						out.print( session.getAttribute("error_pwd")); 
-   								session.setAttribute("error_pwd","");
-   								}%></font>		</div>
+			</div>
+			<div class="row">
+				<div class="pricedetails">
+					<div class="col-md-4 col-md-offset-8">
+						<table>
+							<h6>价格细节</h6>
+							<tr>
+								<td>总价</td>
+								<td>14350.00</td>
+							</tr>
+							<tr>
+								<td>折扣</td>
+								<td>-----</td>
+							</tr>
+							<tr>
+								<td>运费</td>
+								<td>100.00</td>
+							</tr>
+							<tr style="border-top: 1px solid #333">
+								<td><h5>总计</h5></td>
+								<td>15350.00</td>
+							</tr>
+						</table>
+						<center><a href="#" class="btn btn-1">查看</a></center>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
+	</div>	
 	<footer>
 		<div class="container">
 			<div class="wrap-footer">
@@ -279,3 +303,4 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</footer>
 </body>
 </html>
+
