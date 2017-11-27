@@ -17,7 +17,14 @@ public class Goods {
 	private String g_picture5;//图片5
 	private String g_info;//信息
 	private String g_size;//规格
+	private String g_class;//所属的分类
 
+	public String getG_class() {
+		return g_class;
+	}
+	public void setG_class(String g_class) {
+		this.g_class = g_class;
+	}
 	public int getG_id() {
 		return g_id;
 	}
