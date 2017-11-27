@@ -3,6 +3,8 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+<%@ page import="system.bean.Goods" %>
+<%@ page import="system.dao.impl.GoodsDAOImpl" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -216,66 +218,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="col-lg-12">
 					<div class="heading"><h2>大牌专享</h2></div>
 					<div class="products">
+						<%
+							GoodsDAOImpl goodsDAOImpl = new GoodsDAOImpl();
+							List<Goods> listBigGoods = goodsDAOImpl.getBigGoods();
+							for (Goods goods : listBigGoods) {
+						 %>
 						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 							<div class="product">
-								<div class="image"><a href="product.html"><img src="images/Iphone X.jpg"/></a></div>
+								<div class="image"><a href="product.html"><img src="images/<%=goods.getG_picture()%>"/></a></div>
 								<div class="buttons">
 									<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
 									<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
 									<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
 								</div>
 								<div class="caption">
-									<div class="name"><h3><a href="product.html">iphone X</a></h3></div>
-									<div class="price">4555元<span>4988元</span></div>
+									<div class="name"><h3><a href="product.html"><%=goods.getG_detail()%></a></h3></div>
+									<div class="price"><%=goods.getG_cost()%><span><%=goods.getG_price()%></span></div>
 									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-							<div class="product">
-								<div class="image"><a href="product.html"><img src="images/三星Galaxy S8.jpg" /></a></div>
-								<div class="buttons">
-									<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-									<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
-									<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
-								</div>
-								<div class="caption">
-									<div class="name"><h3><a href="product.html">三星Galaxy S8</a></h3></div>
-									<div class="price">5688元<span>6400元</span></div>
-									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span></div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-							<div class="product">
-								<div class="image"><a href="product.html"><img src="images/Iphone 8黑.jpg" /></a></div>
-								<div class="buttons">
-									<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-									<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
-									<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
-								</div>
-								<div class="caption">
-									<div class="name"><h3><a href="product.html">iphone8</a></h3></div>
-									<div class="price">4889元<span>5500元</span></div>
-									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span></div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-							<div class="product">
-								<div class="image"><a href="product.html"><img src="images/Vivo X20.jpg" /></a></div>
-								<div class="buttons">
-									<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-									<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
-									<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
-								</div>
-								<div class="caption">
-									<div class="name"><h3><a href="product.html">Vivo X20 </a></h3></div>
-									<div class="price">3198元<span>3300元</span></div>
-									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
-								</div>
-							</div>
-						</div>
+					<%
+						}
+					%>
 					</div>
 				</div>
 			</div>
