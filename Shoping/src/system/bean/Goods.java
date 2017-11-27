@@ -12,7 +12,7 @@ public class Goods {
 	private String g_color_t;//ÑÕÉ«¶þ
 	private String g_address;//Éú²úµØÖ·
 	private String g_picture;//Í¼Æ¬Ò»
-	private String g_pictrue2;//Í¼Æ¬2
+	private String g_picture2;//Í¼Æ¬2
 	private String g_picture3;//Í¼Æ¬3
 	private String g_picture4;//Í¼Æ¬4
 	private String g_picture5;//Í¼Æ¬5
@@ -93,11 +93,11 @@ public class Goods {
 	public void setG_picture(String g_picture) {
 		this.g_picture = g_picture;
 	}
-	public String getG_pictrue2() {
-		return g_pictrue2;
+	public String getG_picture2() {
+		return g_picture2;
 	}
-	public void setG_pictrue2(String g_pictrue2) {
-		this.g_pictrue2 = g_pictrue2;
+	public void setG_picture2(String g_picture2) {
+		this.g_picture2 = g_picture2;
 	}
 	public String getG_picture3() {
 		return g_picture3;
