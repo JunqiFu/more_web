@@ -4,6 +4,7 @@ public class Goods {
 	private int g_id;//商品的id
 	private String g_name;//商品的名字
 	private String g_detail;//详情信息
+	private String g_brand;//品牌
 	private float g_cost;//原价
 	private float g_price;//现价
 	private String g_color;//颜色
@@ -18,7 +19,14 @@ public class Goods {
 	private String g_info;//信息
 	private String g_size;//规格
 	private String g_class;//所属的分类
+	
 
+	public String getG_brand() {
+		return g_brand;
+	}
+	public void setG_brand(String g_brand) {
+		this.g_brand = g_brand;
+	}
 	public String getG_class() {
 		return g_class;
 	}
