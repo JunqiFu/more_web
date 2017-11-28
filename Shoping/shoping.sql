@@ -1,38 +1,37 @@
 /*
-Navicat MySQL Data Transfer
+SQLyog  v12.2.6 (64 bit)
+MySQL - 5.7.3-m13 : Database - shopping
+*********************************************************************
+*/
 
-Source Server         : localhost
-Source Server Version : 50717
-Source Host           : localhost:3306
-Source Database       : shoping
+/*!40101 SET NAMES utf8 */;
 
-Target Server Type    : MYSQL
-Target Server Version : 50717
-File Encoding         : 65001
+/*!40101 SET SQL_MODE=''*/;
 
-Date: 2017-11-27 14:30:33
-*/
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`shopping` /*!40100 DEFAULT CHARACTER SET utf8 */;
 
-SET FOREIGN_KEY_CHECKS=0;
+USE `shopping`;
 
--- ----------------------------
--- Table structure for adress
--- ----------------------------
+/*Table structure for table `adress` */
+
 DROP TABLE IF EXISTS `adress`;
+
 CREATE TABLE `adress` (
   `u_id` int(11) NOT NULL COMMENT '外键',
   `u_adress` varchar(100) NOT NULL COMMENT '地址',
   PRIMARY KEY (`u_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of adress
--- ----------------------------
+/*Data for the table `adress` */
 
--- ----------------------------
--- Table structure for car
--- ----------------------------
+/*Table structure for table `car` */
+
 DROP TABLE IF EXISTS `car`;
+
 CREATE TABLE `car` (
   `c_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '购物车id 用来删除用',
   `g_id` int(11) DEFAULT NULL COMMENT '商品ID',
@@ -41,31 +40,12 @@ CREATE TABLE `car` (
   PRIMARY KEY (`c_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of car
--- ----------------------------
+/*Data for the table `car` */
 
--- ----------------------------
--- Table structure for contact
--- ----------------------------
-DROP TABLE IF EXISTS `contact`;
-CREATE TABLE `contact` (
-  `contact_id` int(11) NOT NULL,
-  `u_name` varchar(255) NOT NULL,
-  `u_email` varchar(255) DEFAULT NULL,
-  `u_phone` int(255) NOT NULL,
-  `message` varchar(800) NOT NULL DEFAULT '',
-  PRIMARY KEY (`contact_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*Table structure for table `goods` */
 
--- ----------------------------
--- Records of contact
--- ----------------------------
-
--- ----------------------------
--- Table structure for goods
--- ----------------------------
 DROP TABLE IF EXISTS `goods`;
+
 CREATE TABLE `goods` (
   `g_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '商品id',
   `g_name` varchar(50) NOT NULL COMMENT '商品名字',
@@ -88,28 +68,24 @@ CREATE TABLE `goods` (
   KEY `g_id` (`g_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of goods
--- ----------------------------
+/*Data for the table `goods` */
 
--- ----------------------------
--- Table structure for info_order
--- ----------------------------
+/*Table structure for table `info_order` */
+
 DROP TABLE IF EXISTS `info_order`;
+
 CREATE TABLE `info_order` (
   `o_id` int(11) NOT NULL COMMENT '订单外键',
   `g_id` int(11) NOT NULL COMMENT '商品ID',
   `i_price` float NOT NULL COMMENT '价格'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of info_order
--- ----------------------------
+/*Data for the table `info_order` */
 
--- ----------------------------
--- Table structure for order
--- ----------------------------
+/*Table structure for table `order` */
+
 DROP TABLE IF EXISTS `order`;
+
 CREATE TABLE `order` (
   `o_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '订单编号',
   `u_username` varchar(20) DEFAULT NULL COMMENT '用户名',
@@ -121,14 +97,12 @@ CREATE TABLE `order` (
   PRIMARY KEY (`o_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of order
--- ----------------------------
+/*Data for the table `order` */
 
--- ----------------------------
--- Table structure for userinfo
--- ----------------------------
+/*Table structure for table `userinfo` */
+
 DROP TABLE IF EXISTS `userinfo`;
+
 CREATE TABLE `userinfo` (
   `u_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id编号',
   `u_username` varchar(20) NOT NULL DEFAULT '' COMMENT '用户名',
@@ -143,7 +117,12 @@ CREATE TABLE `userinfo` (
   KEY `id` (`u_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of userinfo
--- ----------------------------
-INSERT INTO `userinfo` VALUES ('1', 'admin', 'admin', '', '0', '0000', '000000000@qq.com', '0', '0');
+/*Data for the table `userinfo` */
+
+insert  into `userinfo`(`u_id`,`u_username`,`u_password`,`u_name`,`u_sex`,`u_phone`,`u_email`,`u_power`,`u_adress_id`) values 
+(1,'admin','admin','',0,'0000','000000000@qq.com',0,0);
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
