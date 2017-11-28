@@ -258,66 +258,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="col-lg-12">
 					<div class="heading"><h2>热门推荐</h2></div>
 					<div class="products">
+						<%
+							
+							List<Goods> listFireGoods = goodsDAOImpl.getFireGoods();
+							for (Goods good : listFireGoods) {
+						 %>
 						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 							<div class="product">
-								<div class="image"><a href="product.html"><img src="images/OPPO R11.jpg" /></a></div>
+								<div class="image"><a href="product.html"><img src="images/<%=good.getG_picture()%>"/></a></div>
 								<div class="buttons">
 									<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
 									<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
 									<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
 								</div>
 								<div class="caption">
-									<div class="name"><h3><a href="product.html">OPPO R11</a></h3></div>
-									<div class="price">2890元<span>3321元</span></div>
+									<div class="name"><h3><a href="product.html"><%=good.getG_detail()%></a></h3></div>
+									<div class="price"><%=good.getG_cost()%><span><%=good.getG_price()%></span></div>
 									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-							<div class="product">
-								<div class="image"><a href="product.html"><img src="images/魅族 Note6.jpg" /></a></div>
-								<div class="buttons">
-									<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-									<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
-									<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
-								</div>
-								<div class="caption">
-									<div class="name"><h3><a href="product.html">魅族 Note6 </a></h3></div>
-									<div class="price">3900元<span>4162元</span></div>
-									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span></div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-							<div class="product">
-								<div class="image"><a href="product.html"><img src="images/小米 5X.jpg" /></a></div>
-								<div class="buttons">
-									<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-									<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
-									<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
-								</div>
-								<div class="caption">
-									<div class="name"><h3><a href="product.html">小米 5X</a></h3></div>
-									<div class="price">3999元<span>4465元</span></div>
-									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span></div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-							<div class="product">
-								<div class="image"><a href="product.html"><img src="images/荣耀 V9.jpg" /></a></div>
-								<div class="buttons">
-									<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-									<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
-									<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
-								</div>
-								<div class="caption">
-									<div class="name"><h3><a href="product.html">荣耀 V9</a></h3></div>
-									<div class="price">4899元<span>5165元</span></div>
-									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
-								</div>
-							</div>
-						</div>
+					<%
+						}
+					%>
 					</div>
 				</div>
 			</div>
