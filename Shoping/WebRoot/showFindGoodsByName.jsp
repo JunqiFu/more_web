@@ -161,7 +161,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 	</nav>
 		<div class="container">
-		
+
 			<div class="row">
 				<h6>根据您搜索的 <i style="color:red;font-size:40px;"><%=searchResult%></i>&nbsp;下面为你展示搜索结果</h6>
 				<div class="col-lg-12">
