@@ -3,9 +3,14 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
 <%@ page import="system.bean.Goods" %>
 <%@ page import="system.dao.impl.GoodsDAOImpl" %>
+<%
+			request.setCharacterEncoding("UTF-8");
+			String searchResult = request.getParameter("search");
+		
+		 %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,8 +82,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			
 <!--这里是 搜索按钮里面的内容*****************************************-->
 			<div class="col-md-4">
-				<form class="form-search" action="showFindGoodsByName.jsp">  
-					<input type="text" class="input-medium search-query" name="search">  
+				<form class="form-search">  
+					<input type="text" class="input-medium search-query">  
 					<button type="submit" class="btn"><span class="glyphicon glyphicon-search"></span></button>  
 				</form>
 			</div>
@@ -155,80 +160,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</div>
 	</nav>
-	<!--//////////////////////////////////////////////////-->
-	<!--///////////////////HomePage///////////////////////-->
-	<!--//////////////////////////////////////////////////-->
-    <div class="copyrights">Collect from <a href="#" ></a></div>
-	<div id="page-content" class="home-page">
 		<div class="container">
+		
 			<div class="row">
+				<h6>根据您搜索的 <i style="color:red;font-size:40px;"><%=searchResult%></i>&nbsp;下面为你展示搜索结果</h6>
 				<div class="col-lg-12">
-					<!-- Carousel -->
-					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-						<!-- Indicators -->
-						<ol class="carousel-indicators hidden-xs">
-							<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-							<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-							<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-						</ol>
-						<!-- Wrapper for slides -->
-						<div class="carousel-inner">
-							<div class="item active">
-								<img src="images/main-banner1-1903x600.jpg" alt="First slide">
-								<!-- Static Header -->
-								<div class="header-text hidden-xs">
-									<div class="col-md-12 text-center">
-									</div>
-								</div><!-- /header-text -->
-							</div>
-							<div class="item">
-								<img src="images/main-banner2-1903x600.jpg" alt="Second slide">
-								<!-- Static Header -->
-								<div class="header-text hidden-xs">
-									<div class="col-md-12 text-center">
-									</div>
-								</div><!-- /header-text -->
-							</div>
-							<div class="item">
-								<img src="images/main-banner3-1903x600.jpg" alt="Third slide">
-								<!-- Static Header -->
-								<div class="header-text hidden-xs">
-									<div class="col-md-12 text-center">
-									</div>
-								</div><!-- /header-text -->
-							</div>
-						</div>
-						<!-- Controls -->
-						<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-							<span class="glyphicon glyphicon-chevron-left"></span>
-						</a>
-						<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-							<span class="glyphicon glyphicon-chevron-right"></span>
-						</a>
-					</div><!-- /carousel -->
-				</div>
-			</div>
-			<div class="row">
-				<div class="banner">
-					<div class="col-sm-4">
-						<img src="images/sub-banner1.png" />
-					</div>
-					<div class="col-sm-4">
-						<img src="images/sub-banner2.png" />
-					</div>
-					<div class="col-sm-4">
-						<img src="images/sub-banner3.png" />
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="heading"><h2>大牌专享</h2></div>
+					<div class="heading"><h2>搜索结果</h2></div>
 					<div class="products">
 						<%
+							
 							GoodsDAOImpl goodsDAOImpl = new GoodsDAOImpl();
-							List<Goods> listBigGoods = goodsDAOImpl.getBigGoods();
-							for (Goods goods : listBigGoods) {
+							List<Goods> searchResultByName = goodsDAOImpl.searchGoods(searchResult);
+							for (Goods goods : searchResultByName) {
 						 %>
 						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 							<div class="product">
@@ -251,48 +194,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="banner">
-					<div class="col-sm-6">
-						<img src="images/sub-banner4.jpg" />
-					</div>
-					<div class="col-sm-6">
-						<img src="images/sub-banner5.png" />
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="heading"><h2>热门推荐</h2></div>
-					<div class="products">
-						<%
-							
-							List<Goods> listFireGoods = goodsDAOImpl.getFireGoods();
-							for (Goods good : listFireGoods) {
-						 %>
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-							<div class="product">
-								<div class="image"><a href="product.html"><img src="images/<%=good.getG_picture()%>"/></a></div>
-								<div class="buttons">
-									<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-									<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
-									<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
-								</div>
-								<div class="caption">
-									<div class="name"><h3><a href="product.html"><%=good.getG_detail()%></a></h3></div>
-									<div class="price"><%=good.getG_cost()%><span><%=good.getG_price()%></span></div>
-									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
-								</div>
-							</div>
-						</div>
-					<%
-						}
-					%>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 	<footer>
 		<div class="container">
 			<div class="wrap-footer">
