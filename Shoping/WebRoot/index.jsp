@@ -114,11 +114,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="dropdown-menu">
 							<div class="dropdown-inner">
 								<ul class="list-unstyled">
-									<li><a href="category.html">苹果</a></li>
-									<li><a href="category.html">华为</a></li>
-									<li><a href="category.html">三星</a></li>
-									<li><a href="category.html">魅族</a></li>
-									<li><a href="category.html">诺基亚</a></li>
+									<li><a href="showFindGoodsByName.jsp?search=苹果">苹果</a></li>
+									<li><a href="showFindGoodsByName.jsp?search=华为">华为</a></li>
+									<li><a href="showFindGoodsByName.jsp?search=三星">三星</a></li>
+									<li><a href="showFindGoodsByName.jsp?search=魅族">魅族</a></li>
+									<li><a href="showFindGoodsByName.jsp?search=诺基亚">诺基亚</a></li>
 								</ul>
 							</div> 
 						</div>
@@ -127,25 +127,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="dropdown-menu" style="margin-left: -203.625px;">
 							<div class="dropdown-inner">
 								<ul class="list-unstyled">
-									<li><a href="account_find.html">苹果</a></li>
-									<li><a href="account_find.html">三星</a></li>
-									<li><a href="account_find.html">诺基亚</a></li>
-									<li><a href="account_find.html">联想</a></li>
-									<li><a href="account_find.html">谷歌</a></li>
+									<li><a href="javascript:document:search_form.submit();" onclick="document.getElementById('searchTxt').value=this.innerHTML;">苹果</a></li>
+									<li><a href="showFindGoodsByName.jsp?search=三星">三星</a></li>
+									<li><a href="showFindGoodsByName.jsp?search=诺基亚">诺基亚</a></li>
+									<li><a href="showFindGoodsByName.jsp?search=联想">联想</a></li>
+									<li><a href="showFindGoodsByName.jsp?search=谷歌">谷歌</a></li>
 								</ul>
 								<ul class="list-unstyled">
-									<li><a href="account_find.html">Nexus</a></li>
-									<li><a href="account_find.html">Dell</a></li>
-									<li><a href="account_find.html">Oppo</a></li>
-									<li><a href="account_find.html">黑莓</a></li>
-									<li><a href="account_find.html">HTC</a></li>
+									<li><a href="showFindGoodsByName.jsp?search=Nexus">Nexus</a></li>
+									<li><a href="showFindGoodsByName.jsp?search=Dell">Dell</a></li>
+									<li><a href="showFindGoodsByName.jsp?search=Oppo">Oppo</a></li>
+									<li><a href="showFindGoodsByName.jsp?search=黑莓">黑莓</a></li>
+									<li><a href="showFindGoodsByName.jsp?search=HTC">HTC</a></li>
 								</ul>
 								<ul class="list-unstyled">
-									<li><a href="account_find.html">LG</a></li>
-									<li><a href="account_find.html">Q-Mobiles</a></li>
-									<li><a href="account_find.html">索尼</a></li>
-									<li><a href="account_find.html">永光</a></li>
-									<li><a href="account_find.html">爱立信</a></li>
+									<li><a href="showFindGoodsByName.jsp?search=LG">LG</a></li>
+									<li><a href="showFindGoodsByName.jsp?search=Q-Mobiles">Q-Mobiles</a></li>
+									<li><a href="showFindGoodsByName.jsp?search=索尼">索尼</a></li>
+									<li><a href="showFindGoodsByName.jsp?search=永光">永光</a></li>
+									<li><a href="showFindGoodsByName.jsp?search=爱立信">爱立信</a></li>
 								</ul>
 							</div>
 						</div>
@@ -351,6 +351,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 			</div>
 		</div>
-	</footer>
+	</footer>	
 </body>
+
 </html>
