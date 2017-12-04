@@ -230,17 +230,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							List<Goods> listBigGoods = goodsDAOImpl.getBigGoods();
 							for (Goods goods : listBigGoods) {
 						 %>
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 							<div class="product">
-								<div class="image"><a href="product.html"><img src="images/<%=goods.getG_picture()%>"/></a></div>
+								<div class="image"><a href="goodsDetail.jsp?id=<%=goods.getG_id()%>"><img src="<%=basePath%>images/<%=goods.getG_picture()%>"/></a></div>
 								<div class="buttons">
 									<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
 									<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
 									<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
 								</div>
 								<div class="caption">
-									<div class="name"><h3><a href="product.html"><%=goods.getG_detail()%></a></h3></div>
-									<div class="price"><%=goods.getG_cost()%><span><%=goods.getG_price()%></span></div>
+									<div class="name"><h3><a href="goodsDetail.jsp?id=<%=goods.getG_id()%>"><%=goods.getG_detail()%></a></h3></div>
+									<div class="price"><%=goods.getG_price()%><span><%=goods.getG_cost()%></span></div>
 									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
 								</div>
 							</div>
@@ -272,15 +272,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						 %>
 						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 							<div class="product">
-								<div class="image"><a href="product.html"><img src="images/<%=good.getG_picture()%>"/></a></div>
+								<div class="image"><a href="goodsDetail.jsp?id=<%=good.getG_id()%>"><img src="<%=basePath%>images/<%=good.getG_picture()%>"/></a></div>
 								<div class="buttons">
 									<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
 									<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
 									<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
 								</div>
 								<div class="caption">
-									<div class="name"><h3><a href="product.html"><%=good.getG_detail()%></a></h3></div>
-									<div class="price"><%=good.getG_cost()%><span><%=good.getG_price()%></span></div>
+									<div class="name"><h3><a href="goodsDetail.jsp?id=<%=good.getG_id()%>"><%=good.getG_detail()%></a></h3></div>
+									<div class="price"><%=good.getG_price()%><span><%=good.getG_cost()%></span></div>
 									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
 								</div>
 							</div>
