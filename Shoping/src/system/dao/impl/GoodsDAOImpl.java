@@ -103,6 +103,10 @@ public class GoodsDAOImpl {
 		}		
 		return goods;
 	}
+	/**
+	 * 下面这是来搜索的商品
+	 * 
+	 * */
 	public List<Goods> searchGoods(String key) {
 		List<Goods> goods = new ArrayList<Goods>();	
 		try {
@@ -135,6 +139,45 @@ public class GoodsDAOImpl {
 				good.setG_class(rs.getString("g_class"));
 				System.err.println(good.getG_brand());
 				goods.add(good);
+			}
+			return goods;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	/**
+	 * 下面这是通过商品的ID来查询的商品信息
+	 * 
+	 * */
+	public Goods findGoodsByID(int id ) {
+		Goods goods = new Goods();	
+		try {
+			con=db.getConnection();
+			String sql="SELECT * FROM goods WHERE g_id="+id;
+			pstmt=con.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+			while (rs.next()) {
+				goods.setG_id(rs.getInt("g_id"));
+				goods.setG_name(rs.getString("g_name"));
+				goods.setG_detail(rs.getString("g_detail"));
+				goods.setG_cost(rs.getInt("g_cost"));
+				goods.setG_price(rs.getInt("g_price"));
+				goods.setG_brand(rs.getString("g_brand"));
+				goods.setG_color(rs.getString("g_color"));
+				goods.setG_color_o(rs.getString("g_color_o"));
+				goods.setG_color_t(rs.getString("g_color_t"));
+				goods.setG_address(rs.getString("g_address"));
+				goods.setG_picture(rs.getString("g_picture"));
+				goods.setG_picture2(rs.getString("g_picture2"));
+				goods.setG_picture3(rs.getString("g_picture3"));
+				goods.setG_picture4(rs.getString("g_picture4"));
+				goods.setG_picture5(rs.getString("g_picture5"));
+				goods.setG_info(rs.getString("g_info"));
+				goods.setG_size(rs.getString("g_size"));
+				goods.setG_class(rs.getString("g_class"));
 			}
 			return goods;
 		} catch (SQLException e) {

@@ -6,9 +6,9 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <%
+  request.setCharacterEncoding("UTF-8");
   String username = request.getParameter("username");
   String password = request.getParameter("password");
-  
   session.setAttribute("error","");
   UserDAOImpl userDAOImpl = new UserDAOImpl();
   Userinfo userinfo = userDAOImpl.isExist(username, password);
