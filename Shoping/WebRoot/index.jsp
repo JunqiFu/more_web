@@ -43,7 +43,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 
 <body>
-	<!--Top-->
+   <jsp:include page="header.jsp"/><!--导入header.jsp-->
+	<!--Top
 	<nav id="top">
 		<div class="container">
 			<div class="row">
@@ -69,14 +70,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 	</nav>
 	<!--Header-->
-	<header class="container">
+	<!--<header class="container">
 		<div class="row">
 			<div class="col-md-4">
 				<div id="logo"><img src="images/logo(1).png" /></div>
 			</div>
 			
 <!--这里是 搜索按钮里面的内容*****************************************-->
-			<div class="col-md-4">
+			<!--<div class="col-md-4">
 				<form class="form-search" action="showFindGoodsByName.jsp">  
 					<input type="text" class="input-medium search-query" name="search">  
 					<button type="submit" class="btn"><span class="glyphicon glyphicon-search"></span></button>  
@@ -86,13 +87,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			
 			
 			
-			<div class="col-md-4">
+			<!--<div class="col-md-4">
 				<div id="cart"><a class="btn btn-1" href="cart.html"><span class="glyphicon glyphicon-shopping-cart"></span>购物车 : 0 数量</a></div>
 			</div>
 		</div>
 	</header>
 	<!--Navigation-->
-    <nav id="menu" class="navbar">
+  <!-- <nav id="menu" class="navbar">
 		<div class="container">
 			<div class="navbar-header"><span id="heading" class="visible-xs">Categories</span>
 			  <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
@@ -293,65 +294,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</div>
 	</div>
-	<footer>
-		<div class="container">
-			<div class="wrap-footer">
-				<div class="row">
-					<div class="col-md-3 col-footer footer-1">
-						<img src="images/logofooter.png" />
-						<p>Mars Mobile Shop是一个网络手机商城服务平台，在这里你可以搜索到你需要的任何电子产品，我们将竭诚为您服务。</p>
-					</div>
-					<div class="col-md-3 col-footer footer-2">
-						<div class="heading"><h4>客户服务</h4></div>
-						<ul>
-							<li><a href="#">关于我们</a></li>
-							<li><a href="#">配送信息</a></li>
-							<li><a href="#">隐私政策</a></li>
-							<li><a href="#">条款和说明</a></li>
-							<li><a href="#">联系我们</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3 col-footer footer-3">
-						<div class="heading"><h4>我的账户</h4></div>
-						<ul>
-							<li><a href="#">账户</a></li>
-							<li><a href="#">品牌</a></li>
-							<li><a href="#">礼券</a></li>
-							<li><a href="#">特价</a></li>
-							<li><a href="#">网站地图</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3 col-footer footer-4">
-						<div class="heading"><h4>联系我们</h4></div>
-						<ul>
-							<li><span class="glyphicon glyphicon-home"></span>中国 成都 高新</li>
-							<li><span class="glyphicon glyphicon-earphone"></span>+86 456587941</li>
-							<li><span class="glyphicon glyphicon-envelope"></span>Marsshop@sian.com</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="copyright">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						版权所有 &copy; 2017 Mars Mobile Shop中国商务公司.       <a target="_blank" href="#">联系我们</a>
-					</div>
-					<div class="col-md-6">
-						<div class="pull-right">
-							<ul>
-								<li><img src="images/visa-curved-32px.png" /></li>
-								<li><img src="images/paypal-curved-32px.png" /></li>
-								<li><img src="images/discover-curved-32px.png" /></li>
-								<li><img src="images/maestro-curved-32px.png" /></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>	
+	
+	   <jsp:include page="footer.jsp"/><!--导入footer.jsp-->
+	   
 </body>
 
 </html>

@@ -3,53 +3,32 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<%@ page import="system.bean.Goods" %>
-<%@ page import="system.dao.impl.GoodsDAOImpl" %>
-<%
-			//request.setCharacterEncoding("UTF-8");
-			String search = request.getParameter("search");
-			String searchResult=new String(search.getBytes("ISO-8859-1"),"UTF-8");
-		
-		 %>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="">
-    <meta name="author" content="">
-	
-    <title>Mars Mobile Shop</title>
-	
-    <!-- Bootstrap Core CSS -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>My JSP 'header.jsp' starting page</title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+
+    <title>MARS</title>
     <link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css">
-	
-	<!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
-	
-	
-	<!-- Custom Fonts -->
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"  type="text/css">
     <link rel="stylesheet" href="fonts/font-slider.css" type="text/css">
-	
-	<!-- jQuery and Modernizr-->
-	<script src="js/jquery-2.1.1.js"></script>
-	
-	<!-- Core JavaScript Files -->  	 
+	<script src="js/jquery-2.1.1.js"></script>	 
     <script src="js/bootstrap.min.js"></script>
-	
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="js/html5shiv.js"></script>
-        <script src="js/respond.min.js"></script>
-    <![endif]-->
-</head>
 
-<body>
-	<!--Top-->
+  </head>
+  
+  <body>
+<!--Top-->
 	<nav id="top">
 		<div class="container">
 			<div class="row">
@@ -74,8 +53,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</div>
 	</nav>
-	<!--Header-->
 	
+	<!--Header-->
 	<header class="container">
 		<div class="row">
 			<div class="col-md-4">
@@ -98,7 +77,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</div>
 	</header>
-	
 	<!--Navigation-->
     <nav id="menu" class="navbar">
 		<div class="container">
@@ -118,7 +96,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</div>
 						</div>
 					</li>
-						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> 体 验 </a>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> 体 验 </a>
 						<div class="dropdown-menu">
 							<div class="dropdown-inner">
 								<ul class="list-unstyled">
@@ -163,43 +141,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</div>
 	</nav>
-	
-	
-		<div class="container">
-
-			<div class="row">
-				<h6>根据您搜索的 <i style="color:red;font-size:40px;"><%=searchResult%></i>&nbsp;下面为你展示搜索结果</h6>
-				<div class="col-lg-12">
-					<div class="heading"><h2>搜索结果</h2></div>
-					<div class="products">
-						<%
-							
-							GoodsDAOImpl goodsDAOImpl = new GoodsDAOImpl();
-							List<Goods> searchResultByName = goodsDAOImpl.searchGoods(searchResult);
-							for (Goods goods : searchResultByName) {
-						 %>
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-							<div class="product">
-								<div class="image"><a href="product.html"><img src="images/<%=goods.getG_picture()%>"/></a></div>
-								<div class="buttons">
-									<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-									<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
-									<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
-								</div>
-								<div class="caption">
-									<div class="name"><h3><a href="product.html"><%=goods.getG_detail()%></a></h3></div>
-									<div class="price"><%=goods.getG_cost()%><span><%=goods.getG_price()%></span></div>
-									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
-								</div>
-							</div>
-						</div>
-					<%
-						}
-					%>
-					</div>
-				</div>
-			</div>
-			
-       <jsp:include page="footer.jsp"/><!--导入footer.jsp-->
-</body>
+  </body>
 </html>
