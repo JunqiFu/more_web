@@ -1,16 +1,16 @@
 package system.bean;
 
 public class contact {
-	private int contact_id;
+	private String contact_id;
 	private String u_name;
 	private String u_email;
 	private String u_phone;
 	private String message;
 	
-	public int getcontact_id() {
+	public String getcontact_id() {
 		return contact_id;
 	}
-	public void setcontact_id(int contact_id) {
+	public void setcontact_id(String contact_id) {
 		this.contact_id = contact_id;
 	}
 	
