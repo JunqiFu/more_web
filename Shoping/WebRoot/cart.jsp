@@ -58,7 +58,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="product well">
 					<div class="col-md-3">
 						<div class="image">
-							<img src="images/Iphone X.jpg" />
+							<img src="images/IphoneX(1)20171129.jpg"/>
 						</div>
 					</div>
 					<div class="col-md-9">
@@ -83,7 +83,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="product well">
 					<div class="col-md-3">
 						<div class="image">
-							<img src="images/OPPO R11.jpg" />
+							<img src="images/OPPOR11(1)20171129.jpg" />
 						</div>
 					</div>
 					<div class="col-md-9">
