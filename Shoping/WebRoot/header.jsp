@@ -46,8 +46,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<div class="col-xs-6">
 					<ul class="top-link">
-						<li><a href="account.html"><span class="glyphicon glyphicon-user"></span>我的账户</a></li>
-						<li><a href="contact.html"><span class="glyphicon glyphicon-envelope"></span>联系</a></li>
+						<li><a href="account.jsp"><span class="glyphicon glyphicon-user"></span>我的账户</a></li>
+						<li><a href="contact.jsp"><span class="glyphicon glyphicon-envelope"></span>联系</a></li>
 					</ul>
 				</div>
 			</div>
@@ -73,7 +73,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			
 			
 			<div class="col-md-4">
-				<div id="cart"><a class="btn btn-1" href="cart.html"><span class="glyphicon glyphicon-shopping-cart"></span>购物车 : 0 数量</a></div>
+				<div id="cart"><a class="btn btn-1" href="cart.jsp"><span class="glyphicon glyphicon-shopping-cart"></span>购物车 : 0 数量</a></div>
 			</div>
 		</div>
 	</header>
@@ -85,12 +85,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="index.html"> 首 页</a></li>
+					<li><a href="index.jsp"> 首 页</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">商 城</a>
 						<div class="dropdown-menu">
 							<div class="dropdown-inner">
 								<ul class="list-unstyled">
-									<li><a href="category.html">线上商城</a></li>
+									<li><a href="category.jsp">线上商城</a></li>
 									<li><a href="#">实体店</a></li>
 								</ul>
 							</div>
@@ -136,7 +136,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</div>
 						</div>
 					</li>
-					<li><a href="contact.html">服 务</a></li>
+					<li><a href="contact.jsp">服 务</a></li>
 				</ul>
 			</div>
 		</div>

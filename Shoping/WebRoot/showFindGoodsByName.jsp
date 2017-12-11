@@ -107,12 +107,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="index.html"> 首 页</a></li>
+					<li><a href="index.jsp"> 首 页</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">商 城</a>
 						<div class="dropdown-menu">
 							<div class="dropdown-inner">
 								<ul class="list-unstyled">
-									<li><a href="category.html">线上商城</a></li>
+									<li><a href="category.jsp">线上商城</a></li>
 									<li><a href="#">实体店</a></li>
 								</ul>
 							</div>
@@ -158,7 +158,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</div>
 						</div>
 					</li>
-					<li><a href="contact.html">服 务</a></li>
+					<li><a href="contact.jsp">服 务</a></li>
 				</ul>
 			</div>
 		</div>
@@ -180,14 +180,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						 %>
 						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 							<div class="product">
-								<div class="image"><a href="product.html"><img src="images/<%=goods.getG_picture()%>"/></a></div>
+								<div class="image"><a href="product.jsp"><img src="images/<%=goods.getG_picture()%>"/></a></div>
 								<div class="buttons">
 									<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
 									<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
 									<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
 								</div>
 								<div class="caption">
-									<div class="name"><h3><a href="product.html"><%=goods.getG_detail()%></a></h3></div>
+									<div class="name"><h3><a href="product.jsp"><%=goods.getG_detail()%></a></h3></div>
 									<div class="price"><%=goods.getG_cost()%><span><%=goods.getG_price()%></span></div>
 									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
 								</div>

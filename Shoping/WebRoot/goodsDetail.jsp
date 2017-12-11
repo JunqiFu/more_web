@@ -63,8 +63,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<div class="col-xs-6">
 					<ul class="top-link">
-						<li><a href="account.html"><span class="glyphicon glyphicon-user"></span>我的账户</a></li>
-						<li><a href="contact.html"><span class="glyphicon glyphicon-envelope"></span>联系</a></li>
+						<li><a href="account.jsp"><span class="glyphicon glyphicon-user"></span>我的账户</a></li>
+						<li><a href="contact.jsp"><span class="glyphicon glyphicon-envelope"></span>联系</a></li>
 					</ul>
 				</div>
 			</div>
@@ -101,12 +101,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="index.html"> 首 页</a></li>
+					<li><a href="index.jsp"> 首 页</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">商 城</a>
 						<div class="dropdown-menu">
 							<div class="dropdown-inner">
 								<ul class="list-unstyled">
-									<li><a href="category.html">线上商城</a></li>
+									<li><a href="category.jsp">线上商城</a></li>
 									<li><a href="#">实体店</a></li>
 								</ul>
 							</div>
@@ -152,7 +152,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</div>
 						</div>
 					</li>
-					<li><a href="contact.html">服 务</a></li>
+					<li><a href="contact.jsp">服 务</a></li>
 				</ul>
 			</div>
 		</div>
@@ -224,7 +224,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									</select>
 								</div>
 								<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
-								<div class="well"><label>数量: </label> <input class="form-inline quantity" type="text" value="1"><a href="#" class="btn btn-2 ">添加到购物车</a></div>
+								<div class="well"><label>数量: </label> 
+								
+					<!--添加到购物车 -->
+								
+								<input class="form-inline quantity" type="text" value="1"><a href="#" class="btn btn-2 ">添加到购物车</a></div>
 								<div class="share well">
 									<strong style="margin-right: 13px;">分享至 :</strong>
 									<a href="#" class="share-btn" target="_blank">
@@ -411,65 +415,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</div>
 	</div>	
-	<footer>
-		<div class="container">
-			<div class="wrap-footer">
-				<div class="row">
-					<div class="col-md-3 col-footer footer-1">
-						<img src="images/logofooter.png" />
-						<p>Mars Mobile Shop是一个网络手机商城服务平台，在这里你可以搜索到你需要的任何电子产品，我们将竭诚为您服务。</p>
-					</div>
-					<div class="col-md-3 col-footer footer-2">
-						<div class="heading"><h4>客户服务</h4></div>
-						<ul>
-							<li><a href="#">关于我们</a></li>
-							<li><a href="#">配送信息</a></li>
-							<li><a href="#">隐私政策</a></li>
-							<li><a href="#">条款和说明</a></li>
-							<li><a href="#">联系我们</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3 col-footer footer-3">
-						<div class="heading"><h4>我的账户</h4></div>
-						<ul>
-							<li><a href="#">账户</a></li>
-							<li><a href="#">品牌</a></li>
-							<li><a href="#">礼券</a></li>
-							<li><a href="#">特价</a></li>
-							<li><a href="#">网站地图</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3 col-footer footer-4">
-						<div class="heading"><h4>联系我们</h4></div>
-						<ul>
-							<li><span class="glyphicon glyphicon-home"></span>中国 成都 高新</li>
-							<li><span class="glyphicon glyphicon-earphone"></span>+86 456587941</li>
-							<li><span class="glyphicon glyphicon-envelope"></span>Marsshop@sian.com</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="copyright">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						版权所有 &copy; 2017 Mars Mobile Shop中国商务公司.       <a target="_blank" href="#">联系我们</a>
-					</div>
-					<div class="col-md-6">
-						<div class="pull-right">
-							<ul>
-								<li><img src="images/visa-curved-32px.png" /></li>
-								<li><img src="images/paypal-curved-32px.png" /></li>
-								<li><img src="images/discover-curved-32px.png" /></li>
-								<li><img src="images/maestro-curved-32px.png" /></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+	   <jsp:include page="footer.jsp"/><!--导入footer.jsp-->
 	
 	<!-- IMG-thumb -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
