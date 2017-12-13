@@ -8,16 +8,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <%
 	request.setCharacterEncoding("UTF-8");
 	String username = request.getParameter("username");
-	
 	String name = request.getParameter("name");
 	String mail = request.getParameter("mail");
 	String phone = request.getParameter("phone");
 	String addr = request.getParameter("address");
-	//四川成都市高新区83号
-	//if(username.equals("")){
-	//	session.setAttribute("addAddrinfo_error","出错!请重新输入。");
-  	//	response.sendRedirect("addAddrInfo.jsp");
-	//}else{
+
 		Address address = new Address();
 		AddressDAOImpl addressDAOImpl = new AddressDAOImpl();
 		address.setU_username(username);

@@ -13,7 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   UserDAOImpl userDAOImpl = new UserDAOImpl();
   Userinfo userinfo = userDAOImpl.isExist(username, password);
   if(userinfo!=null) {
-    
+    session.setAttribute("Userinfo",userinfo);
     response.sendRedirect("index.jsp");
   }else{
   		session.setAttribute("error","账号或密码出错,验证失败！");
