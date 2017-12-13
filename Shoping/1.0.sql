@@ -16,6 +16,27 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`shopping` /*!40100 DEFAULT CHARACTER SE
 
 USE `shopping`;
 
+/*Table structure for table `address` */
+
+DROP TABLE IF EXISTS `address`;
+
+CREATE TABLE `address` (
+  `a_id` int(11) NOT NULL AUTO_INCREMENT,
+  `u_username` varchar(20) DEFAULT NULL,
+  `a_name` varchar(10) DEFAULT NULL,
+  `a_mail` varchar(6) DEFAULT NULL,
+  `a_phone` varchar(11) DEFAULT NULL,
+  `a_address` varchar(60) DEFAULT NULL,
+  KEY `a_id` (`a_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+/*Data for the table `address` */
+
+insert  into `address`(`a_id`,`u_username`,`a_name`,`a_mail`,`a_phone`,`a_address`) values 
+(2,'梁康林','梁康林','638300','15182659077','四川成都市高新区83号'),
+(5,'梁康林','1','11','15182659077','1'),
+(6,'梁康林','123132','132','131','12331');
+
 /*Table structure for table `car` */
 
 DROP TABLE IF EXISTS `car`;
@@ -101,23 +122,6 @@ CREATE TABLE `order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `order` */
-
-/*Table structure for table `u_adress` */
-
-DROP TABLE IF EXISTS `u_adress`;
-
-CREATE TABLE `u_adress` (
-  `u_adress_id` int(11) NOT NULL,
-  `u_adress1` varchar(50) NOT NULL,
-  `u_adress2` varchar(50) DEFAULT NULL,
-  `u_adress3` varchar(50) DEFAULT NULL,
-  `u_adress4` varchar(50) DEFAULT NULL,
-  `u_adress5` varchar(50) DEFAULT NULL,
-  `u_adress6` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`u_adress_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-/*Data for the table `u_adress` */
 
 /*Table structure for table `userinfo` */
 

@@ -1,3 +1,4 @@
+<%@page import="system.bean.Userinfo"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
@@ -21,11 +22,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>  
   <%
      
-     AddressDAOImpl addressDAOImpl = new AddressDAOImpl();
-     String username="梁康林";
-     int count = addressDAOImpl.getAddrCount(username);
-   %>
-  
+     AddressDAOImpl addressDAOImpl = new AddressDAOImpl(); 
+     Userinfo user = (Userinfo) session.getAttribute("Userinfo");
+     
+     %>
+  	<%int count = addressDAOImpl.getAddrCount(user.getUsername());
+    %>
   
   
   
@@ -52,7 +54,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <li><a href="maps.html"><i class="fa fa-map-marker fa-fw"></i>购物车管理</a></li>
             <li><a href="manage-users.html"><i class="fa fa-users fa-fw"></i>修改密码</a></li>
             <li><a href="preferences.html"><i class="fa fa-sliders fa-fw"></i>退出登录</a></li>
-            <li><a href="login.html"><i class="fa fa-eject fa-fw"></i>商城首页</a></li>
+            <li><a href="index.jsp"><i class="fa fa-eject fa-fw"></i>商城首页</a></li>
           </ul>  
         </nav>
       </div>
@@ -105,7 +107,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<tbody>
 					<%	    
 						int addrCount=1;
-						List<Address> allAddrInfo = addressDAOImpl.getAllInfoByUser(username);
+						List<Address> allAddrInfo = addressDAOImpl.getAllInfoByUser(user.getUsername());
 						if(count==0){
 						%>
 							<tr class="success">

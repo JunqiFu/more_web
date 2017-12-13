@@ -3,16 +3,8 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
-
 <%@ page import="system.bean.Address" %>
-<%@ page import="system.bean.Userinfo" %>
 <%@ page import="system.dao.impl.AddressDAOImpl"%>
-<%
-	Userinfo user = (Userinfo) session.getAttribute("Userinfo");
-   
-
- %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,8 +23,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <%
      
      AddressDAOImpl addressDAOImpl = new AddressDAOImpl();
-
-     int count = addressDAOImpl.getAddrCount(user.getUsername());
+     String username="梁康林";
+     int count = addressDAOImpl.getAddrCount(username);
    %>
     <!-- Left column -->
     <div class="templatemo-flex-row">
@@ -67,23 +59,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="row-fluid" >
 		<div class="span12">
 			<blockquote>
-				<p>添加收货地址的时候，请注意： </p>
+				<p>修改邮寄地址的时候，请注意： </p>
 				<p>1、 收货人姓名和详细地址：需真实有效  </p>
 				<p>2、 联系方式：建议填写手机，以便及时联系  </p>
 				<p>3、 详细地址：一定要填写正确并且详细，所在地区的省市县，如果找不到所在地区，请选择所在地区的上一级县市 
 				<p><i style="color:red;">注:每个人可以最多可以添加五条地址信息</i>
-				</p> <small>关键词 <cite>收货地址</cite></small>
+				</p> <small>关键词 <cite>修改收货地址</cite></small>
 			</blockquote>
 			<div class="span12">
 				<blockquote>
-				<h1>添加收货地址</h1>
+				<h1>修改收货地址</h1>
 				</blockquote>
 			</div>
 		</div>
 		<div class="col-md-6" style="magin:0 auto;">
 					<form name="form" id="ff2" method="post" action="addAddrInfo_deal.jsp">
 						<div class="form-group">
-							<input type="text" class="form-control" name="username" id="firstname"  readonly = "readonly" value="<%=user.getUsername() %>" >
+							<input type="text" class="form-control" name="username" id="firstname"  readonly = "readonly" value="<%=username %>" >
 						</div>
 						<div class="form-group">
 							<input type="text" class="form-control" placeholder="收货人姓名 :" name="name" id="lastname" required>

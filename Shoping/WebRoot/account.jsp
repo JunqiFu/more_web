@@ -3,6 +3,23 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+
+
+<%@ page import="system.bean.Address" %>
+<%@ page import="system.bean.Userinfo" %>
+<%@ page import="system.dao.impl.AddressDAOImpl"%>
+<%
+
+	Userinfo user = (Userinfo) session.getAttribute("Userinfo");
+   if(user!=null){
+   			response.sendRedirect("manageUserInfo.jsp");
+   
+   }
+
+
+
+
+ %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
