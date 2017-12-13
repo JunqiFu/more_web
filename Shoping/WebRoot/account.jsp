@@ -62,7 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<input type="password" class="form-control" placeholder="密码 :" name="password" id="password" required>
 						</div>
 						<button type="submit" class="btn btn-1" name="login" id="login">登陆</button>
-						<a href="#">是否忘记密码?</a>
+						<a href="forget1.jsp">是否忘记密码?</a>
 					    
 						<br><br>
 						<font style="font-size: 30px;color:red;">	

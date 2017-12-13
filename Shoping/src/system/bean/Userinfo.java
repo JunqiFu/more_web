@@ -65,5 +65,21 @@ public class Userinfo {
 	public void setPower(int power) {
 		this.power = power;
 	}
+	
+	private String passwordAnswer;//客户输入的验证答案
+	public String getPasswordAnswer(){
+		return passwordAnswer;
+	}
+	public void setPasswordAnswer(String passwordAnswer){
+		this.passwordAnswer = passwordAnswer;
+	}
+	//用户设置的问题
+	private String passwordQuestion;
+	public String getPasswordQuestion(){
+		return passwordQuestion;
+	}
+	public void setPasswordQuestion(String passwordQuestion){
+		this.passwordQuestion = passwordQuestion;
+	}
 
 }
