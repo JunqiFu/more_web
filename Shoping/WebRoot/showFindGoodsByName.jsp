@@ -9,7 +9,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			//request.setCharacterEncoding("UTF-8");
 			String search = request.getParameter("search");
 			String searchResult=new String(search.getBytes("ISO-8859-1"),"UTF-8");
-		
 		 %>
 
 <!DOCTYPE html>

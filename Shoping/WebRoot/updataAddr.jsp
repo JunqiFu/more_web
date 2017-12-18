@@ -23,8 +23,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <%
      
      AddressDAOImpl addressDAOImpl = new AddressDAOImpl();
-     String username="梁康林";
-     int count = addressDAOImpl.getAddrCount(username);
+     String address_id = request.getParameter("id");
+     int id=Integer.parseInt(address_id);
+     Address address =addressDAOImpl.getAddrInfoById(id);
    %>
     <!-- Left column -->
     <div class="templatemo-flex-row">
@@ -63,7 +64,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<p>1、 收货人姓名和详细地址：需真实有效  </p>
 				<p>2、 联系方式：建议填写手机，以便及时联系  </p>
 				<p>3、 详细地址：一定要填写正确并且详细，所在地区的省市县，如果找不到所在地区，请选择所在地区的上一级县市 
-				<p><i style="color:red;">注:每个人可以最多可以添加五条地址信息</i>
 				</p> <small>关键词 <cite>修改收货地址</cite></small>
 			</blockquote>
 			<div class="span12">
@@ -73,22 +73,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</div>
 		<div class="col-md-6" style="magin:0 auto;">
-					<form name="form" id="ff2" method="post" action="addAddrInfo_deal.jsp">
+					<form name="form" id="ff2" method="post" action="updataAddr_deal.jsp">
 						<div class="form-group">
-							<input type="text" class="form-control" name="username" id="firstname"  readonly = "readonly" value="<%=username %>" >
+							<p><h3>用户名:</h3></p>
+							<input type="text" class="form-control" name="a_id" id="firstname"  readonly = "readonly" value="<%=id %>" style="display:none" >
+							<input type="text" class="form-control" name="a_username" id="firstname"  readonly = "readonly" value="<%=address.getU_username() %>" >
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="收货人姓名 :" name="name" id="lastname" required>
+							<p><h3>收货人姓名:</h3> </p>
+							<input type="text" class="form-control" placeholder="原收货人姓名 :<%=address.getA_name() %>" name="a_name" id="lastname" required>
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="邮编号码 :" name="mail" id="lastname" required>
+						    <p><h3>邮编号码:</h3> </p>
+							<input type="text" class="form-control" placeholder="原邮编号码 :<%=address.getA_mail() %>" name="a_mail" id="lastname" required>
 						</div>
 						<div class="form-group">
-							<input type="tel" class="form-control" placeholder="详情地址 :" name="address" id="email" required>
+							<p><h3>详情地址:</h3> </p>
+							<input type="tel" class="form-control" placeholder="原详情地址 :<%=address.getA_address() %>" name="a_address" id="email" required>
 						</div>
 						<div class="form-group">
-							<input type="tel" class="form-control" placeholder="电话号码 :" name="phone" id="phone" required>
-						<button type="submit" class="btn btn-1">创建</button>
+							<p><h3>电话号码:</h3> </p>
+							<input type="tel" class="form-control" placeholder="原电话号码 :<%=address.getA_phone() %>" name="a_phone" id="phone" required>
+						<br>
+						<button type="submit" class="btn btn-1 btn-danger">修改</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<button type="reset" class="btn btn-1 btn-success">重置</button>
 					</form>
 				</div>
 			</div>

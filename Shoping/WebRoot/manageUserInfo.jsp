@@ -5,6 +5,7 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <%@ page import="system.bean.Address" %>
+<%@ page import="system.bean.Userinfo" %>
 <%@ page import="system.dao.impl.AddressDAOImpl" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,11 +21,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link href="info/css/templatemo-style.css" rel="stylesheet">
   </head>
   <body>  
+  		<%
+  		if(session.getAttribute("addressHiht")==null){
+  			
+  		}else if(session.getAttribute("addressHiht").equals("修改地址信息成功成功")){
+  		%>
+  		<script language="javascript"> //JavaScript脚本标注
+  			alert("修改地址信息成功成功");
+		 </script>
+  		<%
+  		session.removeAttribute("addressHiht");
+  		}
+  		
+  %>
+  
+  
+  
   <%
-     
+  		
      AddressDAOImpl addressDAOImpl = new AddressDAOImpl(); 
      Userinfo user = (Userinfo) session.getAttribute("Userinfo");
-     
      %>
   	<%int count = addressDAOImpl.getAddrCount(user.getUsername());
     %>
@@ -130,7 +146,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<%=addrCount++ %>
 						</td>
 						<td>
-							<%=address.getU_username() %>
+							<%=address.getA_name() %>
 						</td>
 						<td>
 							<%=address.getA_mail()%>
@@ -142,7 +158,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<%=address.getA_phone() %>
 						</td>
 						<td>
-							<a href="updata_user.jsp?id=">编辑</a>
+							<a href="updataAddr.jsp?id=<%=address.getA_id()%>">编辑</a>
 							<a onclick="del(<%=address.getA_id()%>)">删除</a>
 						</td>
 					</tr>
