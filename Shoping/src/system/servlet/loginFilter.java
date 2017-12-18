@@ -1,6 +1,17 @@
 package system.servlet;
 
-
+/*<filter>
+     	<filter-name>loginFilter</filter-name>
+     	<filter-class>system.servlet.loginFilter</filter-class>
+     	<init-param>
+     		<param-name>include</param-name>
+     		<param-value>manageUserinfo,addAddrinfo</param-value>
+     	</init-param>
+  	</filter>
+  	<filter-mapping>
+    	<filter-name>loginFilter</filter-name>
+     	<url-pattern>*.jsp</url-pattern>
+  	</filter-mapping>*/
 
 import java.io.IOException;
 import system.bean.Userinfo;
@@ -32,7 +43,7 @@ public class loginFilter implements Filter {
 		
 		if(user==null){
 			String path =  ((HttpServletRequest)request).getContextPath();
-			((HttpServletResponse)response).sendRedirect(path+"/main.jsp");
+			((HttpServletResponse)response).sendRedirect(path+"/index.jsp");
 			return;
 		}
 

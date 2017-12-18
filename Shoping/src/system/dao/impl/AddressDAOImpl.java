@@ -18,8 +18,6 @@ public class AddressDAOImpl {
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 	private DBcon db;
-
-	
 	//链接数据库
 	public AddressDAOImpl(){
 				db=new DBcon();
@@ -75,7 +73,7 @@ public class AddressDAOImpl {
 	}
 	
 	/**
-	 * 增加地址信息（注册）
+	 * 增加地址信息）
 	 * 
 	 */	
 	public boolean addAddrInfo(Address address){
@@ -97,6 +95,10 @@ public class AddressDAOImpl {
 			}
 				return false;	
 		}
+	/**
+	 *删除地址信息根据ID
+	 * 
+	 */	
 	public int deleteAddr(int id){
 		int count=0;
 		try {
@@ -113,7 +115,57 @@ public class AddressDAOImpl {
 		return count;
 	}
 		
-			
+	/**
+	 * 查找地址信息根据ID
+	 * 
+	 */	
+	public Address getAddrInfoById(int ID) {	
+		Address address = new Address();
+		try{
+			con=db.getConnection();
+			String sql="select * from address where a_id=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1, ID);
+			rs=pstmt.executeQuery();		
+		    if(rs.next()){
+				address.setU_username(rs.getString("u_username"));
+				address.setA_id(ID);
+				address.setA_mail(rs.getString("a_mail"));
+				address.setA_name(rs.getString("a_name"));
+				address.setA_phone(rs.getString("a_phone"));
+				address.setAddress(rs.getString("a_address"));
+				return address;			
+		    }
+		    if(rs!=null) rs.close();	
+		    if(pstmt!=null) pstmt.close();
+			if(con!=null) con.close();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}				
+		return null;
+	}
+	/**
+	 * 修改地址信息
+	 * 
+	 */
+	public boolean updateAddrInfo(Address address){
+		
+		try {
+			con=db.getConnection();
+			String sqlserver="update address set a_name=?,a_mail=?,a_phone=?,a_address=? where a_id=?";
+			pstmt=con.prepareStatement(sqlserver);
+			pstmt.setString(1, address.getA_name());
+			pstmt.setString(2, address.getA_mail());
+			pstmt.setString(3, address.getA_phone());
+			pstmt.setString(4, address.getA_address());
+			pstmt.setInt(5, address.getA_id());
+			pstmt.executeUpdate();
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+			return false;	
+	}
 	
 
 }
