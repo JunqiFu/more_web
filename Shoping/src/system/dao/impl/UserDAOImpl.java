@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import system.bean.Address;
 import system.bean.Userinfo;
 import system.db.*;
 
@@ -154,7 +155,6 @@ public class UserDAOImpl {
 			con = db.getConnection();
 			try {
 				pstmt = con.prepareStatement("update userinfo set u_password=? where u_username=?");
-				
 				pstmt.setString(1, newPwd);
 				pstmt.setString(2, username);
 				
@@ -175,6 +175,61 @@ public class UserDAOImpl {
 		public static void main(String[] args){
 			UserDAOImpl u = new UserDAOImpl();
 			u.updateUserPassword("admin", "123");
+		}		
+		/**
+		 * 获取所有的普通用户信息
+		 */
+		public List<Userinfo> getPagedUser(int pageIndex, int pageSize ,int power){
+			
+			System.out.print(pageIndex);
+			System.out.print(pageSize);
+			System.out.print(power);
+			List<Userinfo> userinfos = new ArrayList<Userinfo>();
+			int startRowNum = (pageIndex - 1) * pageSize;
+			try {
+				con=db.getConnection();
+				String sql="SELECT * FROM userinfo where u_power=? limit "
+							+ startRowNum + "," + pageSize;
+				pstmt=con.prepareStatement(sql);
+				pstmt.setInt(1, power);
+				rs=pstmt.executeQuery();
+	            while(rs.next()){				
+					Userinfo userinfo = new Userinfo();
+					userinfo.setUsername(rs.getString("u_username"));
+					userinfo.setPassword(rs.getString("u_password"));
+					userinfo.setSex(rs.getInt("u_sex"));
+					userinfo.setPhone(rs.getString("u_phone"));
+					userinfo.setEmail(rs.getString("u_email"));
+					userinfo.setPower(rs.getInt("u_power"));
+					userinfo.setName(rs.getString("u_name"));
+					userinfos.add(userinfo);
+				}						
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}		
+			return userinfos;
 		}
-	
+		/**
+		 * 下面这是来获取地址的总数
+		 * 
+		 * */
+		public int getUserinfoCount( int power) {
+			try {
+				con=db.getConnection();
+				String sql="select COUNT(*) from userinfo where u_power=?";
+				pstmt=con.prepareStatement(sql);
+				pstmt.setInt(1, power);
+				rs=pstmt.executeQuery();
+				if (rs.next()) {
+					return rs.getInt(1);
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return 0;
+		}
+		
+		
 }
