@@ -13,7 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">  
-    <title>个人信息管理</title>
+    <title>信息管理</title>
     <meta name="description" content="">
     <meta name="author" content="templatemo">
     <link href="info/css/font-awesome.min.css" rel="stylesheet">
@@ -26,33 +26,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   			
   		}else if(session.getAttribute("addressHiht").equals("修改地址信息成功成功")){
   		%>
-  		<script language="javascript"> //JavaScript脚本标注
-  			alert("修改地址信息成功成功");
+  		 <script language="javascript"> //JavaScript脚本标注
+  			alert("修改地址信息成功");
 		 </script>
   		<%
   		session.removeAttribute("addressHiht");
-  		}
-  		
-  %>
+  		}	
+%>
   
   
   
-  <%
-  		
+<% 		
      AddressDAOImpl addressDAOImpl = new AddressDAOImpl(); 
      Userinfo user = (Userinfo) session.getAttribute("Userinfo");
      %>
   	<%int count = addressDAOImpl.getAddrCount(user.getUsername());
     %>
-  
-  
-  
     <!-- Left column -->
     <div class="templatemo-flex-row">
       <div class="templatemo-sidebar">
         <header class="templatemo-site-header">
           <div class="square"></div>
-          <h1>个人信息管理</h1>
+          <%
+            if(user.getPower()==0){
+           %>
+           		<h1>当前登录:AdMIN</h1>
+           <%
+            } else {
+           %>
+           <h1>当前登录:<%=user.getUsername() %></h1>
+           <%
+            }
+           %>
+          
         </header>
         <div class="profile-photo-container">
           <img src="info/images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">  
@@ -64,19 +70,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div>
         <nav class="templatemo-left-nav">          
           <ul>
-
-            <li><a href="manageUserInfo.jsp"><i class="fa fa-bar-chart fa-fw"></i>地址管理</a></li>
-            <li><a href="data-visualization.html"><i class="fa fa-database fa-fw"></i>订单管理</a></li>
-            <li><a href="maps.html"><i class="fa fa-map-marker fa-fw"></i>购物车管理</a></li>
-            <li><a href="manage-users.html"><i class="fa fa-users fa-fw"></i>修改密码</a></li>
-            <li><a href="preferences.html"><i class="fa fa-sliders fa-fw"></i>退出登录</a></li>
-            <li><a href="index.jsp"><i class="fa fa-eject fa-fw"></i>商城首页</a></li>
+          <%
+             if(user.getPower()==0){
+             %>
+             	<!-- 管理员的菜单栏 -->
+             	<li><a href="manageUserInfo.jsp"  class="active"><i class="fa fa-bar-chart fa-fw"></i>用户信息管理</a></li>
+            	<li><a href="manageUserInfo.jsp"><i class="fa fa-database fa-fw"></i>商品信息管理</a></li>
+            	<li><a href="manageUserInfo.jsp"><i class="fa fa-map-marker fa-fw"></i>销售管理</a></li>
+            	<li><a href="manageUserInfo.jsp"><i class="fa fa-users fa-fw"></i>修改密码</a></li>
+            	<li><a href="manageUserInfo.jsp"><i class="fa fa-sliders fa-fw"></i>客户留言</a></li>
+            	<li><a href="manageUserInfo.jsp"><i class="fa fa-eject fa-fw"></i>退出登录</a></li>
+             <%}else{%>
+            	 <!-- 普通用户的菜单栏 -->
+            	<li><a href="manageUserInfo.jsp"  class="active"><i class="fa fa-bar-chart fa-fw"></i>地址管理</a></li>
+            	<li><a href="manageUserInfo.jsp"><i class="fa fa-database fa-fw"></i>订单管理</a></li>
+            	<li><a href="manageUserInfo.jsp"><i class="fa fa-map-marker fa-fw"></i>购物车管理</a></li>
+           	 	<li><a href="manageUserInfo.jsp"><i class="fa fa-users fa-fw"></i>修改密码</a></li>
+            	<li><a href="manageUserInfo.jsp"><i class="fa fa-sliders fa-fw"></i>退出登录</a></li>
+            	<li><a href="manageUserInfo.jsp"><i class="fa fa-eject fa-fw"></i>商城首页</a></li>
+			<%}%>          
           </ul>  
         </nav>
       </div>
-      <!-- Main content -->
-      <div class="templatemo-content col-1 light-gray-bg">
-	<!-- ********************************************************* -->
+           <!-- Main content -->
+   <div class="templatemo-content col-1 light-gray-bg">
+	
 	<br>
 	<h1>共查到<%=count %>条记录</h1>
 	<br><br><div class="container-fluid">
