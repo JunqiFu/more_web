@@ -10,8 +10,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   			session.setAttribute("pageIndx", 1);
   			session.setAttribute("pageIndxA", 1);
   		}
-  	
-  	
  %>
 <!DOCTYPE html>
 <html lang="en">
@@ -178,7 +176,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<%=userinfo.getEmail() %>
 						</td>
 						<td>
-							<a href="updataAddr.jsp?id=<%%>">编辑</a>
+							<a href="updateUserinfo.jsp?Username=<%=userinfo.getUsername()%>">编辑</a>
 							<a onclick="del()">删除</a>
 						</td>
 					</tr>
@@ -186,8 +184,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<tr>
 							<td colspan="8">
 								<center><a href="adminUserFrame.jsp?pageIndex=<%=lastPage%>">上一页</a>&nbsp;&nbsp;&nbsp;
-								第<%=pageIndex%>页/共<%=pageUser%>页&nbsp;&nbsp;&nbsp;
-								<a onclick="nextPage()">下一页</a>
+								第<%=pageIndex%>页/共<%=pageUser%>页
 								<a href="adminUserFrame.jsp?pageIndex=<%=nextPageUser%>">下一页</a></center>
 							</td>
 						</tr>
@@ -254,7 +251,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<%=userinfo.getEmail() %>
 						</td>
 						<td>
-							<a href="updataAddr.jsp?id=<%%>">编辑</a>
+							<a href="updateUserinfo.jsp?Username=<%=userinfo.getUsername()%>">编辑</a>
 							<a onclick="del()">删除</a>
 						</td>
 					</tr>
@@ -263,9 +260,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<td colspan="8">
 								<center><a href="adminUserFrame.jsp?pageIndexA=<%=lastPage%>">上一页</a>&nbsp;&nbsp;&nbsp;
 								第<%=pageIndex%>页/共<%=pageAdmin%>页&nbsp;&nbsp;&nbsp;
-								
-								<a onclick="nextPageA()">下一页</a>
-								<a href="adminUserFrame.jsp?pageIndexA=<%=nextPageAdmin%>">下一页</a></center>
+								<a href="adminUserFrame.jsp?pageIndexA=<%=nextPageAdmin%>">下一页</a>
+								</center>
 							</td>
 						</tr>
 				</tbody>
@@ -273,23 +269,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 	</div>
 </div>
-				
-					
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-
-
-
+	
 		<!-- ************分割线************* -->
 	</div>	
 </div>
@@ -349,18 +329,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script type="text/javascript" src="info/js/templatemo-script.js"></script>      <!-- Templatemo Script -->
 	
   </body>
-  
-  <script type="text/javascript">
-  function nextPageA(){
-	  <%session.setAttribute("pageIndxA", nextPageAdmin);%>
-	  location.href="/Shoping/adminUserFrame.jsp" ;
-	  
-  }
-  function nextPage(){
-	 
-	  location.href="/Shoping/adminUserFrame.jsp" ;
-	  
-  }
-  
-  </script>
+
 </html>
