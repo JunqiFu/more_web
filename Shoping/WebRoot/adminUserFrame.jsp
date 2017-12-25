@@ -177,7 +177,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</td>
 						<td>
 							<a href="updateUserinfo.jsp?Username=<%=userinfo.getUsername()%>">编辑</a>
-							<a onclick="del()">删除</a>
+							<a onclick="del('<%=userinfo.getUsername()%>')">删除</a>
 						</td>
 					</tr>
 					<%	} %>
@@ -252,7 +252,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</td>
 						<td>
 							<a href="updateUserinfo.jsp?Username=<%=userinfo.getUsername()%>">编辑</a>
-							<a onclick="del()">删除</a>
+							<!-- <a onclick="del('<%=userinfo.getUsername()%>')">删除</a> -->
+							<a onclick="del('<%=userinfo.getUsername()%>')">删除</a>
 						</td>
 					</tr>
 					<%	} %>
@@ -329,5 +330,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script type="text/javascript" src="info/js/templatemo-script.js"></script>      <!-- Templatemo Script -->
 	
   </body>
-
+	<script type="text/javascript">
+  function del(name){
+  		
+	  if(confirm("你确定要删除“ "+name+" ”用户的信息吗？")){
+		//页面跳转
+		window.location.href="userinfoDelete_deal.jsp?Username="+name;
+	  }
+  }
+  
+  </script>
 </html>
