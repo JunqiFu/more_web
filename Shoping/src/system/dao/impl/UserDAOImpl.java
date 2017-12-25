@@ -250,4 +250,23 @@ public class UserDAOImpl {
 			}
 				return false;	
 		}
+		/**
+		 * 删除用户根据用户名
+		 * 
+		 * */
+		public int deleteUser(String username){
+			int count=0;
+			try {
+				con=db.getConnection();
+				String sql="delete from userinfo where u_username=?";
+				pstmt=con.prepareStatement(sql);
+				pstmt.setString(1, username);
+				count=pstmt.executeUpdate();
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return count;
+		}
 }
