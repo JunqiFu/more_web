@@ -122,7 +122,6 @@ public class UserDAOImpl {
 				rs = pstmt.executeQuery();
 				
 				while(rs.next()){
-					
 					userInfo.setId(rs.getInt("u_id"));
 					userInfo.setUsername(rs.getString("u_username"));
 					userInfo.setPassword(rs.getString("u_password"));
@@ -133,9 +132,7 @@ public class UserDAOImpl {
 					userInfo.setPower(rs.getInt("u_power"));
 					userInfo.setPasswordAnswer(rs.getString("u_passwordAnswer"));
 					userInfo.setPasswordQuestion(rs.getString("u_passwordQuestion"));
-				}
-				
-				
+				}	
 				if (rs != null)
 					rs.close();
 				if (pstmt != null)
@@ -230,6 +227,27 @@ public class UserDAOImpl {
 			}
 			return 0;
 		}
-		
-		
+		/**
+		 * 下面这个是管理员修改密码的语句
+		 * 
+		 * */
+		public boolean updateUserinfo(Userinfo userinfo){
+			try {
+				con=db.getConnection();
+				String sqlserver="update userinfo set u_password=?,u_phone=?,u_email=?,u_passwordQuestion=?,u_passwordAnswer=?,u_name=? where u_username=?";
+				pstmt=con.prepareStatement(sqlserver);
+				pstmt.setString(1, userinfo.getPassword());
+				pstmt.setString(2, userinfo.getPhone());
+				pstmt.setString(3, userinfo.getEmail());
+				pstmt.setString(4, userinfo.getPasswordQuestion());
+				pstmt.setString(5, userinfo.getPasswordAnswer());
+				pstmt.setString(6, userinfo.getName());
+				pstmt.setString(7, userinfo.getUsername());
+				pstmt.executeUpdate();
+				return true;
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+				return false;	
+		}
 }
