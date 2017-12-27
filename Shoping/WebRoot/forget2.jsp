@@ -6,6 +6,10 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
+<% 
+     Userinfo userinfo = (Userinfo) session.getAttribute("Userinfo");
+ %>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -45,6 +49,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <body >
  <jsp:include page="header.jsp"/><!--导入header.jsp-->
+ 
 <% request.setCharacterEncoding("utf-8");
 	
 	 String username = request.getParameter("username");
@@ -59,7 +64,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      return;
      }
      
-     if(request.getParameterMap().size()>0){//如果有参数提交，则进行答案验证
+     
+     
+   if(request.getParameterMap().size()>0){//如果有参数提交，则进行答案验证
      //获取参数
      String passWordAnswer= request.getParameter("passWordAnswer");
      //验证答案
@@ -67,7 +74,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
          //跳转界面
           response.sendRedirect("forget3.jsp");
       }else{
-        session.setAttribute("errorMsg", "答案不正确，你再想一想。");
+       session.setAttribute("errorMsg", "答案不正确，你再想一想。");
         
       }
      }
@@ -107,7 +114,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</tr>
         <!-- - 
         <% String msg = (String)session.getAttribute("errorMsg");
-						   if(msg != null){
+						   if(msg == null){
+						   
+						   
+						   
+						   
 		 %>-->
 		 <tr>
 			<td colspan="2" style="color:red;"><%=msg%></td>

@@ -10,13 +10,13 @@ request.setCharacterEncoding("utf-8");
 	String username = request.getParameter("username");
 	String password = request.getParameter("password");
    String password1 = request.getParameter("confirmPassword");
-   if(!password.equals(password1)){
-    session.setAttribute("error_pwd","两次密码输入不正确!请重新输入。");
+   if(!password.equals(password)){
+    session.setAttribute("error_pwd","两次密码输入不正确!请重新输入");
   	response.sendRedirect("forget3.jsp");
 
   	}else{
   		UserDAOImpl u = new UserDAOImpl();
-  		if(u.updateUserPassword("admin", password)){
+  		if(u.updateUserPassword(username, password)){
 	  		response.sendRedirect("account.jsp");
   		}
   	}

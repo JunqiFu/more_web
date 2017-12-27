@@ -1,10 +1,15 @@
 <%@page import="system.dao.impl.UserDAOImpl"%>
 <%@page import="system.bean.Userinfo"%>
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+<%
+     
+     Userinfo userinfo = (Userinfo) session.getAttribute("Userinfo");
+     
+     %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -25,8 +30,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    
 </head>
 <body >
+
 <jsp:include page="header.jsp"/><!--导入header.jsp-->
+
     <% String username = request.getParameter("username");
+
+    	
+      
     %>
         <form method="post" action="forget3_deal.jsp">
         			<input type="hidden" name="username" value="<%=username%>">

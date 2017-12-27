@@ -97,6 +97,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<input type="password" class="form-control" placeholder="重新输入密码 :" name="pwd1" id="pwd1" required>
 						</div>
 						<div class="form-group">
+							<input type="text" class="form-control" placeholder="密保问题 :" name="passwordQuestion" id="passwordQuestion" required>
+						</div>
+						<div class="form-group">
+							<input type="tel" class="form-control" placeholder="密保答案:" name="passwordAnswer" id="passwordAnswer" required>
+						</div>
+						<div class="form-group">
 							<input name="agree" id="agree" type="checkbox" > 我遵守网站的账户保护协议。
 						</div>
 						<button type="submit" class="btn btn-1">创建</button>

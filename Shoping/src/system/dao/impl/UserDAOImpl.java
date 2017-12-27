@@ -44,6 +44,8 @@ public class UserDAOImpl {
 				userInfo.setSex(rs.getInt("u_sex"));
 				userInfo.setName(rs.getString("u_name"));
 				userInfo.setPower(rs.getInt("u_power"));
+				userInfo.setPasswordAnswer(rs.getString("u_passwordAnswer"));
+				userInfo.setPasswordQuestion(rs.getString("u_passwordQuestion"));
 				return userInfo;			
 		    }
 		    if(rs!=null) rs.close();	
@@ -70,7 +72,7 @@ public class UserDAOImpl {
 		}else{
 				try {
 					con=db.getConnection();
-					String sqlserver="insert into userinfo (u_id,u_username,u_password,u_name,u_phone,u_email,u_sex,u_power) values(?,?,?,?,?,?,?,?)";
+					String sqlserver="insert into userinfo (u_id,u_username,u_password,u_name,u_phone,u_email,u_sex,u_power,u_passwordAnswer,u_passwordQuestion) values(?,?,?,?,?,?,?,?,?,?)";
 					pstmt=con.prepareStatement(sqlserver);
 					pstmt.setInt(1, userInfo.getId());
 					pstmt.setString(2, userInfo.getUsername());
@@ -80,6 +82,8 @@ public class UserDAOImpl {
 					pstmt.setString(6, userInfo.getEmail());
 					pstmt.setInt(7, userInfo.getSex());
 					pstmt.setInt(8, userInfo.getPower());
+					pstmt.setString(9,userInfo.getPasswordAnswer());
+					pstmt.setString(10,userInfo.getPasswordQuestion());
 					pstmt.executeUpdate();
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
