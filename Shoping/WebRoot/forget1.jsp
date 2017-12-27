@@ -36,36 +36,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
     <meta charset="utf-8" />
     <style type="text/css">
-    .code
-    {
-            background:url(code_bg.jpg);
-            font-family:Arial;
-            font-style:italic;
-             color:blue;
-             font-size:30px;
-             border:0;
-             padding:2px 3px;
-             letter-spacing:3px;
-             font-weight:bolder;             
-             float:left;            
-             cursor:pointer;
-             width:150px;
-             height:60px;
-             line-height:60px;
-             text-align:center;
-             vertical-align:middle;
-
-    }
-    a
-    {
-        text-decoration:none;
-        font-size:12px;
-        color:#288bc4;
-        }
-    a:hover
-    {
-       text-decoration:underline;
-        }
+   
+   
+   
+   
+   
+   
     </style>
 </head>
 <body>
@@ -91,7 +67,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						align="center">
 						<tr>
 							<td height="60">
-								<div align="right">请输入账号：</div>
+								<div align="right" width="100px">
+								
+								
+								
+								
+								
+								请输入账号：</div>
 							</td>
 							<td>
 								<div align="left">

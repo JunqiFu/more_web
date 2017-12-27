@@ -21,6 +21,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    String name=request.getParameter("name");
    String phone=request.getParameter("phone");
    String email=request.getParameter("email");
+   String passwordAnswer=request.getParameter("passwordAnswer");
+   String passwordQuestion=request.getParameter("passwordQuestion");
    Userinfo userinfo=new Userinfo();
    UserDAOImpl userinfoDao=new UserDAOImpl();
    userinfo.setUsername(username);
@@ -29,6 +31,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    userinfo.setPhone(phone);
    userinfo.setEmail(email);
    userinfo.setPower(1);
+   userinfo.setPasswordAnswer(passwordAnswer);
+   userinfo.setPasswordQuestion(passwordQuestion);
    if(sex==null){
    		userinfo.setSex(0);
    }else{
