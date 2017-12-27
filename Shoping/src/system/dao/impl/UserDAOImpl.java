@@ -174,13 +174,10 @@ public class UserDAOImpl {
 			u.updateUserPassword("admin", "123");
 		}		
 		/**
-		 * 获取所有的普通用户信息
+		 * 获取所有的用户信息
 		 */
 		public List<Userinfo> getPagedUser(int pageIndex, int pageSize ,int power){
 			
-			System.out.print(pageIndex);
-			System.out.print(pageSize);
-			System.out.print(power);
 			List<Userinfo> userinfos = new ArrayList<Userinfo>();
 			int startRowNum = (pageIndex - 1) * pageSize;
 			try {
@@ -208,7 +205,7 @@ public class UserDAOImpl {
 			return userinfos;
 		}
 		/**
-		 * 下面这是来获取地址的总数
+		 * 下面这是来根据获取的总数
 		 * 
 		 * */
 		public int getUserinfoCount( int power) {
@@ -228,7 +225,7 @@ public class UserDAOImpl {
 			return 0;
 		}
 		/**
-		 * 下面这个是管理员修改密码的语句
+		 * 下面这个是管理员修改信息的语句
 		 * 
 		 * */
 		public boolean updateUserinfo(Userinfo userinfo){
