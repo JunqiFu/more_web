@@ -15,10 +15,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    			response.sendRedirect("manageUserInfo.jsp");
    
    }
-
-
-
-
  %>
 <!DOCTYPE html>
 <html lang="en">

@@ -301,4 +301,35 @@ public boolean addGoods(Goods goods){
 				}
 		return false;	
 	}	
+/**
+ * 下面这个是管理员修改信息的语句
+ * 
+ * */
+	public boolean updateGoods(Goods goods){
+	try {
+		con=db.getConnection();
+		String sqlserver="update goods set g_name=?,g_detail=?,g_cost=?,"
+				+ "g_price=?,g_brand=?,g_color=?,g_color_o=?,g_color_t=?,"
+				+ "g_address=?,g_info=?,g_size=?,g_class=? where g_id=?";
+		pstmt=con.prepareStatement(sqlserver);
+		pstmt.setString(1, goods.getG_name());
+		pstmt.setString(2, goods.getG_detail());
+		pstmt.setFloat(3, goods.getG_cost());
+		pstmt.setFloat(4, goods.getG_price());
+		pstmt.setString(5, goods.getG_brand());
+		pstmt.setString(6, goods.getG_color());
+		pstmt.setString(7, goods.getG_color_o());
+		pstmt.setString(8, goods.getG_color_t());
+		pstmt.setString(9, goods.getG_address());
+		pstmt.setString(10, goods.getG_info());
+		pstmt.setString(11, goods.getG_size());
+		pstmt.setString(12, goods.getG_class());
+		pstmt.setInt(13, goods.getG_id());
+		pstmt.executeUpdate();
+		return true;
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+		return false;	
+}
 }
