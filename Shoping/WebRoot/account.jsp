@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <%@ page import="system.dao.impl.AddressDAOImpl"%>
 <%
 
-	Userinfo user = (Userinfo) session.getAttribute("Userinfo");
+   Userinfo user = (Userinfo) session.getAttribute("Userinfo");
    if(user!=null){
    			response.sendRedirect("manageUserInfo.jsp");
    

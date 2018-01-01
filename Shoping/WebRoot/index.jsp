@@ -38,6 +38,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <body>
 
+	<%
+  		if(session.getAttribute("UserinfoHiht")==null){
+  			
+  		}else if(session.getAttribute("UserinfoHiht").equals("登录成功")){
+  		%>
+  		 <script language="javascript"> //JavaScript脚本标注
+  			alert("登录成功");
+		 </script>
+  		<%
+  		session.removeAttribute("UserinfoHiht");
+  		}	
+	%>
+
    <jsp:include page="header.jsp"/><!--导入header.jsp-->
 	
     <div class="copyrights">Collect from <a href="#" ></a></div>

@@ -85,11 +85,12 @@ public class UserDAOImpl {
 					pstmt.setString(9,userInfo.getPasswordAnswer());
 					pstmt.setString(10,userInfo.getPasswordQuestion());
 					pstmt.executeUpdate();
+					return true;
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				return true;	
+				return false;	
 		}
 			
 	}
