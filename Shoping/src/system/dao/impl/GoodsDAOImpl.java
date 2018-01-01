@@ -265,5 +265,40 @@ public class GoodsDAOImpl {
 		}
 		return count;
 	}
-
+	/**
+	 * 
+	 * 添加商品的信息
+	 * 
+	 * */
+public boolean addGoods(Goods goods){
+		
+		try {
+				con=db.getConnection();
+				String sqlserver="insert into goods (g_id,g_name,g_detail,g_cost,"
+						+ "g_price,g_brand,g_color,g_color_o,g_color_t,g_address,"
+						+ "g_info,g_size,g_class) "
+						+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+				pstmt=con.prepareStatement(sqlserver);
+				pstmt.setInt(1, goods.getG_id());
+				pstmt.setString(2, goods.getG_name());
+				pstmt.setString(3, goods.getG_detail());
+				pstmt.setFloat(4, goods.getG_cost());
+				pstmt.setFloat(5, goods.getG_price());
+				pstmt.setString(6, goods.getG_brand());
+				pstmt.setString(7, goods.getG_color());
+				pstmt.setString(8, goods.getG_color_o());
+				pstmt.setString(9, goods.getG_color_t());
+				pstmt.setString(10, goods.getG_address());
+				pstmt.setString(11, goods.getG_info());
+				pstmt.setString(12, goods.getG_size());
+				pstmt.setString(13, goods.getG_class());
+				
+				pstmt.executeUpdate();
+				return true;
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		return false;	
+	}	
 }

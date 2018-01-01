@@ -14,6 +14,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   Userinfo userinfo = userDAOImpl.isExist(username, password);
   if(userinfo!=null) {
     session.setAttribute("Userinfo",userinfo);
+    session.setAttribute("UserinfoHiht","登录成功");
     response.sendRedirect("index.jsp");
   }else{
   		session.setAttribute("error","账号或密码出错,验证失败！");

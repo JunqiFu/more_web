@@ -125,7 +125,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<%=good.getG_class()%>
 						</td>
 						<td>
-							<a href="updateUserinfo.jsp?Username=<%=good.getG_id()%>">编辑</a>
+							<a href="updateGoods.jsp?G_id=<%=good.getG_id()%>">编辑</a>
 							<a onclick="del(<%=good.getG_id()%>,'<%=good.getG_name()%>')">删除</a>
 						</td>
 					</tr>
