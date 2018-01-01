@@ -20,10 +20,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 
 <%
-	//String name = request.getParameter("Username");
-	//String Username=new String(name.getBytes("ISO-8859-1"),"UTF-8");
-	//UserDAOImpl useDaoImpl = new UserDAOImpl();
-	//Userinfo user = useDaoImpl.getUserInfoByUsername(Username);
+	String id = request.getParameter("G_id");
+	String ss=new String(id.getBytes("ISO-8859-1"),"UTF-8");
+	int G_id=Integer.parseInt(ss); 
+	GoodsDAOImpl goodsDAOImpl = new GoodsDAOImpl();
+	Goods goods = goodsDAOImpl.findGoodsByID(G_id);
+	
  %>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">  
-    <title>个人信息管理</title>
+    <title>修改商品信息</title>
     <meta name="description" content="">
     <meta name="author" content="templatemo">
     <link href="info/css/font-awesome.min.css" rel="stylesheet">
@@ -60,12 +62,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 		
 		<div class="col-md-6" style="magin:0 auto;">
-					<form name="form" id="ff2" method="post" action="updateGoods_deal.jsp" enctype="multipart/form-data">
+					<form name="form" id="ff2" method="post" action="updateGoods_deal.jsp" >
 						<div class="form-group">
 						<input type="text" class="form-control" name="username" id="firstname"  readonly = "readonly" value="1" style="display:none" >
 							<p><h3>图片</h3> </p>
-							<img id="preview" max-width="100" max-height="200" onclick="pigshow()" src="User_img.jsp" />
-							<input type="file" name="img" id="img" onchange="javascript:setImagePreview();">
+							<img id="preview" max-width="100" max-height="200" onclick="pigshow()" src="<%=basePath%>images/<%=goods.getG_picture()%>" style="max-height:100px;max-width:100px;" />
+							<!--  <input type="file" name="img" id="img" onchange="javascript:setImagePreview();">-->
 							<script>
 function setImagePreview() {
 var docObj = document.getElementById("img");
@@ -103,53 +105,53 @@ return true;
 </script>
 						</div>
 						<div class="form-group">
-						<input type="text" class="form-control" name="username" id="firstname"  readonly = "readonly" value="1" style="display:none" >
+						<input type="text" class="form-control" name="g_id" id="firstname"  readonly = "readonly" value="<%=goods.getG_id() %>" style="display:none" >
 							<p><h3>商品名字</h3> </p>
-							<input type="text" class="form-control"  name="g_name" id="lastname" value="1" required>
+							<input type="text" class="form-control"  name="g_name" id="lastname" value="<%=goods.getG_name() %>" required>
 						</div>
 						<div class="form-group">	
 						    <p><h3>详情信息</h3> </p>
-							<input type="text" class="form-control" name="g_detail" id="lastname" value="1" required>
+							<input type="text" class="form-control" name="g_detail" id="lastname" value="<%=goods.getG_detail() %>" required>
 						</div>
 						<div class="form-group">	
 						    <p><h3>原价格</h3> </p>
-							<input type="text" class="form-control" name="g_cost" id="lastname" value="1" required>
+							<input type="text" class="form-control" name="g_cost" id="lastname" value="<%=(int)goods.getG_cost() %>" required>
 						</div>
 						<div class="form-group">
 							<p><h3>现价格</h3> </p>
-							<input type="tel" class="form-control" name="g_price" id="email" value="1" required>
+							<input type="tel" class="form-control" name="g_price" id="email" value="<%=(int)goods.getG_price() %>" required>
 						</div>
 						<div class="form-group">	
 						    <p><h3>品牌</h3> </p>
-							<input type="text" class="form-control" name="g_brand" id="lastname" value="1" required>
+							<input type="text" class="form-control" name="g_brand" id="lastname" value="<%=goods.getG_brand() %>" required>
 						</div>
 						<div class="form-group">
 							<p><h3>颜色一</h3> </p>
-							<input type="tel" class="form-control" name="g_coloro" id="phone" value="1" required>
+							<input type="tel" class="form-control" name="g_coloro" id="phone" value="<%=goods.getG_color() %>" required>
 						<br>
 						<div class="form-group">
 							<p><h3>颜色二</h3> </p>
-							<input type="tel" class="form-control" name="g_colort" id="phone" value="1" required>
+							<input type="tel" class="form-control" name="g_colort" id="phone" value="<%=goods.getG_color_o() %>" required>
 						<br>
 						<div class="form-group">
 							<p><h3>颜色三</h3> </p>
-							<input type="tel" class="form-control" name="g_colorh" id="phone" value="1" required>
+							<input type="tel" class="form-control" name="g_colorh" id="phone" value="<%=goods.getG_color_t() %>" required>
 						<br>
 						<div class="form-group">
 							<p><h3>生产地址</h3> </p>
-							<input type="tel" class="form-control" name="g_address" id="phone" value="1" required>
+							<input type="tel" class="form-control" name="g_address" id="phone" value="<%=goods.getG_address() %>" required>
 						<br>
 						<div class="form-group">
 							<p><h3>商品信息</h3> </p>
-							<input type="tel" class="form-control" name="g_info" id="phone" value="1" required>
+							<input type="tel" class="form-control" name="g_info" id="phone" value="<%=goods.getG_info() %>" required>
 						<br>
 						<div class="form-group">
 							<p><h3>商品规格</h3> </p>
-							<input type="tel" class="form-control" name="g_size" id="phone" value="1" required>
+							<input type="tel" class="form-control" name="g_size" id="phone" value="<%=goods.getG_size() %>" required>
 						<br>
 						<div class="form-group">
 							<p><h3>商品分类</h3> </p>
-							<input type="tel" class="form-control" name="g_class" id="phone" value="1" required>
+							<input type="tel" class="form-control" name="g_class" id="phone" value="<%=goods.getG_class() %>" required>
 						<br>
 						<button type="submit" class="btn btn-1 btn-danger">修改</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<button type="reset" class="btn btn-1 btn-success">重置</button>
