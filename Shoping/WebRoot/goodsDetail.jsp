@@ -4,8 +4,8 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<%@ page import="system.bean.Goods" %>
-<%@ page import="system.dao.impl.GoodsDAOImpl" %>
+<%@ page import="system.bean.*" %>
+<%@ page import="system.dao.impl.*,system.db.*" %>
 
 <!DOCTYPE html>
 
@@ -227,8 +227,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<div class="well"><label>数量: </label> 
 								
 					<!--添加到购物车 -->
+								<%
+								Userinfo user = (Userinfo) session.getAttribute("Userinfo");
+								if(user != null){
+								%>
+								<input class="form-inline quantity" type="text" value="1"><a href="cartadd.jsp?id=<%=goods.getG_id() %>" class="btn btn-2 ">添加到购物车
+								<%}else{%><a href="account.jsp">登录后购买<%} %></a>
+								</a>
 								
-								<input class="form-inline quantity" type="text" value="1"><a href="#" class="btn btn-2 ">添加到购物车</a></div>
+								</div>
 								<div class="share well">
 									<strong style="margin-right: 13px;">分享至 :</strong>
 									<a href="#" class="share-btn" target="_blank">
