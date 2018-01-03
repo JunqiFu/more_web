@@ -4,6 +4,8 @@ public class Order {
 	private int o_id;//订单表的id
 	private String u_username;//用户名
 	private String u_name;//姓名
+	private int g_id;
+	private String g_name;
 	private String o_time;//生成订单的时间
 	private String u_price;//总金额
 	private String u_address;//邮寄的地址
@@ -13,6 +15,12 @@ public class Order {
 	}
 	public void setO_id(int o_id) {
 		this.o_id = o_id;
+	}
+	public int getg_id() {
+		return g_id;
+	}
+	public void setg_id(int g_id) {
+		this.g_id = g_id;
 	}
 	public String getU_username() {
 		return u_username;
@@ -49,6 +57,12 @@ public class Order {
 	}
 	public void setO_pay(String o_pay) {
 		this.o_pay = o_pay;
+	}
+	public String getG_name() {
+		return g_name;
+	}
+	public void setG_name(String g_name) {
+		this.g_name = g_name;
 	}
 	
 }

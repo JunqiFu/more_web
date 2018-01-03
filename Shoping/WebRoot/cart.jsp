@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*,java.sql.*,system.bean.*,system.dao.impl.*,system.db.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -7,6 +7,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<base href="<%=basePath%>">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -55,89 +56,55 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 			</div>
 			<div class="row">
-				<div class="product well">
-					<div class="col-md-3">
-						<div class="image">
-							<img src="images/IphoneX(1)20171129.jpg"/>
-						</div>
-					</div>
-					<div class="col-md-9">
-						<div class="caption">
-							<div class="name"><h3><a href="product.html">iphone X</a></h3></div>
-							<div class="info">	
-								<ul>
-									<li>品牌: Apple</li>
-									<li>商品名称：iphone X</li>
-								</ul>
-							</div>
-							<div class="price">4999元<span>5388元</span></div>
-							<label>数量: </label> <input class="form-inline quantity" type="text" value="1"><a href="#" class="btn btn-2 ">购买</a>
-							<hr>
-							<a href="#" class="btn btn-default pull-right">删除商品信息</a>
-						</div>
-					</div>
-					<div class="clear"></div>
-				</div>	
-			</div>
-			<div class="row">
-				<div class="product well">
-					<div class="col-md-3">
-						<div class="image">
-							<img src="images/OPPOR11(1)20171129.jpg" />
-						</div>
-					</div>
-					<div class="col-md-9">
-						<div class="caption">
-							<div class="name"><h3><a href="product.html">OPPO R11</a></h3></div>
-							<div class="info">
-								<ul>
-									<li>品牌: OPPO</li>
-									<li>商品名称: OPPO R11</li>
-								</ul>
-							</div>
-							<div class="price">4899元<span>5321元</span></div>
-							<label>数量: </label> <input class="form-inline quantity" type="text" value="1"><a href="#" class="btn btn-2 ">购买</a>
-							<hr>
-							<a href="#" class="btn btn-default pull-right">删除商品信息</a>
-						</div>
-					</div>
-					<div class="clear"></div>
-				</div>	
-			</div>
-			<div class="row">
-				<div class="col-md-4 col-md-offset-8 ">
-					<center><a href="category.html" class="btn btn-1">继续购物</a></center>
-				</div>
-			</div>
-			<div class="row">
-				<div class="pricedetails">
-					<div class="col-md-4 col-md-offset-8">
-						<table>
-							<h6>价格细节</h6>
-							<tr>
-								<td>总价</td>
-								<td>14350.00</td>
-							</tr>
-							<tr>
-								<td>折扣</td>
-								<td>-----</td>
-							</tr>
-							<tr>
-								<td>运费</td>
-								<td>100.00</td>
-							</tr>
-							<tr style="border-top: 1px solid #333">
-								<td><h5>总计</h5></td>
-								<td>15350.00</td>
-							</tr>
-						</table>
-						<center><a href="#" class="btn btn-1">查看</a></center>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>	
-	
+				<%HashMap<Integer,Car> cars = (HashMap<Integer,Car>)session.getAttribute("cars");
+				if(cars == null){
+				 %>
+				 <h3>你还没有购物</h3>
+				 <%}else{ %>
+				 <form action="cartadd.jsp">
+				 <table width="800px" border="5" cellpadding="0" cellspacing="0" >
+				 <tr>
+				 <th>序号</th>
+				 <th>图片</th>
+				 <th>品牌</th>
+				 <th>商品名称</th>
+				 <th>单价</th>
+				 <th>数量</th>
+				 <th>总价</th>
+				 </tr>
+				 <%
+				 int i=1;
+				 float sum = 0.0f;
+				 for(Integer id: cars.keySet()){
+				 Car Car = cars.get(id);
+				 
+				 float price = Car.getGoods().getG_price();
+				 float itemSum = Car.getNumber()*price;
+				 sum += itemSum;
+				  %>
+				  <tr>
+				  <td><%=i++%></td>
+				  <td><img src="<%=basePath%>images/<%=Car.getGoods().getG_picture()%>"></td>
+				  <td><%=Car.getGoods().getG_brand()%></td>
+				  <td><%=Car.getGoods().getG_detail()%></td>
+				  <td><%=Car.getGoods().getG_price()%></td>
+				  <td><input name="<%=id%>" value="<%=Car.getNumber()%>"></td>
+				  <td>$<%=itemSum%></td>
+				  </tr>
+				  <%} %>
+				  <tr>
+				  <td></td>
+				  </tr>
+				 </table>
+				 <p align="right">合计：$<%=sum %></p>
+				 <p align="center" class="jixu">
+		       <a href="index.jsp">继续购物</a>
+		       |<a href="jiezhang.jsp">去收银台结账</a>
+		       |<a href="clearcart.jsp">清空购物车</a>
+		     </p>
+				 </form>
+				 <%} %>
+			</div>	
 	<jsp:include page="footer.jsp"/><!--导入footer.jsp-->
 	
 </body>
