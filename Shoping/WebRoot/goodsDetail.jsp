@@ -232,7 +232,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								if(user != null){
 								%>
 								<input class="form-inline quantity" type="text" value="1"><a href="cartadd.jsp?id=<%=goods.getG_id() %>" class="btn btn-2 ">添加到购物车
-								<%}else{%><a href="account.jsp">登录后购买<%} %></a>
+								<%}else{%><a class="btn btn-2 " href="account.jsp">登录后购买<%} %></a>
 								</a>
 								
 								</div>

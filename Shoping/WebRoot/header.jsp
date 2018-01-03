@@ -75,8 +75,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			
 			
 			<div class="col-md-4">
-				<div id="cart"><a class="btn btn-1" href="cart.jsp">
-<!-- 显示购物车数量 -->
+				<div id="cart"><a class="btn btn-1" href="cart.jsp"></a>
 				<span class="glyphicon glyphicon-shopping-cart"></span>购物车 </div>
 			</div>
 		</div>
