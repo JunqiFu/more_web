@@ -1,4 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page import="system.bean.*" %>
+<%@ page import="system.dao.impl.*,system.db.*" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -73,7 +75,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			
 			
 			<div class="col-md-4">
-				<div id="cart"><a class="btn btn-1" href="cart.jsp"><span class="glyphicon glyphicon-shopping-cart"></span>购物车 : 0 数量</a></div>
+				<div id="cart"><a class="btn btn-1" href="cart.jsp">
+<!-- 显示购物车数量 -->
+				<span class="glyphicon glyphicon-shopping-cart"></span>购物车 </div>
 			</div>
 		</div>
 	</header>
