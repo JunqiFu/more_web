@@ -84,7 +84,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				  %>
 				  <tr>
 				  <td><%=i++%></td>
-				  <td><img src="<%=basePath%>images/<%=Car.getGoods().getG_picture()%>"></td>
+				  <td><img src="<%=basePath%>images/<%=Car.getGoods().getG_picture()%>" align="center"width="60" height="60"></td>
 				  <td><%=Car.getGoods().getG_brand()%></td>
 				  <td><%=Car.getGoods().getG_detail()%></td>
 				  <td><%=Car.getGoods().getG_price()%></td>
